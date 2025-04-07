@@ -6,6 +6,7 @@ import JewelleryRepair from './pages/JewelleryRepair'; // import your new page f
 import VideoStream from "./components/VideoStream";
 import Notifications from "./components/Notifications";
 import ExchangeForm from "./components/ExchangeForm";
+import CategoryPage from "../src/pages/CategoryPage"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/video" element={<VideoStream />} />
         <Route path="/notification" element={<Notifications />} />
         <Route path="/exchange" element={< ExchangeForm/>} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
       </Routes>
       <Footer />
       </>

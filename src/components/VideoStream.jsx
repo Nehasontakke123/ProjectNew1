@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import '../assets/css/VideoStream.css'
 
-const socket = io("http://localhost:7001"); // Backend server address
+const socket = io("https://projectnewbackend1-1.onrender.com"); // Backend server address
 
 const VideoStream = () => {
     const localVideoRef = useRef(null);

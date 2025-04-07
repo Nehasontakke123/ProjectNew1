@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import image1 from '../assets/images/DimondRing.jpg';
 import image2 from '../assets/images/GoldRing.jpg';
 import image3 from '../assets/images/EarringDymond.jpg';
@@ -21,15 +22,25 @@ const categories = [
 ];
 
 const JewelleryCategory = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (categoryName) => {
+    navigate(`/category/${encodeURIComponent(categoryName)}`);
+  };
+
   return (
     <div className="jewellery-container">
       <h2 className="jewellery-title">Jewellery Categories</h2>
       <div className="jewellery-scroll">
         <div className="jewellery-track">
           {[...categories, ...categories].map((category, index) => (
-            <div key={index} className="jewellery-card">
+            <div
+              key={index}
+              className="jewellery-card"
+              onClick={() => handleClick(category.name)}
+              style={{ cursor: "pointer" }}
+            >
               <img src={category.image} alt={category.name} className="jewellery-image" />
-              {/* Sparkle Effects */}
               <span className="sparkle sparkle-1"></span>
               <span className="sparkle sparkle-2"></span>
               <span className="sparkle sparkle-3"></span>
