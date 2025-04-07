@@ -1,0 +1,163 @@
+/* Jewellery Section Container */
+.jewellery-container {
+    width: 100vw;
+    margin: 50px auto 0;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Section Title */
+.jewellery-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Jewellery Scroll */
+.jewellery-scroll {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.jewellery-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.jewellery-track {
+    display: flex;
+    gap: 15px;
+    min-width: 200%;
+    animation: scroll 15s linear infinite;
+}
+
+.jewellery-track > * {
+    flex: 0 0 auto;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.jewellery-scroll:hover .jewellery-track {
+    animation-play-state: paused;
+}
+
+/* Jewellery Card */
+.jewellery-card {
+    flex: 0 0 auto;
+    width: 250px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    animation: floating 3s ease-in-out infinite;
+}
+
+.jewellery-card:hover {
+    transform: scale(1.05);
+}
+
+/* Jewellery Image */
+.jewellery-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Shine Effect on Hover */
+.jewellery-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* background: radial-gradient(rgba(255, 255, 255, 0.3), transparent); */
+    transform: rotate(30deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.jewellery-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* Jewellery Name */
+.jewellery-name {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+    0% { opacity: 0; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .jewellery-card {
+        width: 220px;
+    }
+    .jewellery-title {
+        font-size: 26px;
+    }
+    .jewellery-track {
+        animation: scroll 12s linear infinite;
+    }
+}
+
+@media (max-width: 768px) {
+    .jewellery-container {
+        padding: 10px;
+    }
+    .jewellery-card {
+        width: 180px;
+    }
+    .jewellery-title {
+        font-size: 22px;
+    }
+    .jewellery-track {
+        animation: scroll 10s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .jewellery-container {
+        padding: 5px;
+    }
+    .jewellery-card {
+        width: 150px;
+    }
+    .jewellery-title {
+        font-size: 18px;
+    }
+    .jewellery-track {
+        animation: scroll 8s linear infinite;
+    }
+}

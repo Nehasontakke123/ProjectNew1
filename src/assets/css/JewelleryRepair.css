@@ -1,0 +1,238 @@
+/* Main Container */
+.repair-container {
+  max-width: 600px;
+  width: 90%;
+  margin: 50px auto; /* Center the form with some top spacing */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+/* Heading Styles */
+.repair-heading {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.repair-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repair-form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.repair-label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.repair-input,
+.repair-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.repair-textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.repair-btn {
+  background-color: #b56576;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.repair-btn:hover {
+  background-color: #ffb6b9;
+}
+
+/* OTP Form Styles */
+.otp-container {
+  width: 100%;
+  text-align: center;
+}
+
+.otp-form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .repair-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .repair-heading {
+    font-size: 24px;
+  }
+
+  .repair-input,
+  .repair-textarea,
+  .repair-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .repair-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .repair-heading {
+    font-size: 20px;
+  }
+
+  .repair-label {
+    font-size: 14px;
+  }
+
+  .repair-input,
+  .repair-textarea,
+  .repair-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
+
+
+
+/* Main Container */
+.repair-container {
+  max-width: 600px;
+  width: 90%;
+  margin: auto; /* Center horizontally */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Flexbox to center vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centering the form on the whole screen */
+.repair-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .repair-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .repair-heading {
+    font-size: 24px;
+  }
+
+  .repair-input,
+  .repair-textarea,
+  .repair-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .repair-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .repair-heading {
+    font-size: 20px;
+  }
+
+  .repair-label {
+    font-size: 14px;
+  }
+
+  .repair-input,
+  .repair-textarea,
+  .repair-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
+
+
+.repair-container {
+  backdrop-filter: blur(10px); /* Blurry Glass Effect */
+  background: rgba(255, 255, 255, 0.2); /* Transparent White */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.repair-btn {
+  background: linear-gradient(45deg, #b56576, #ffb6b9);
+  transition: all 0.3s ease-in-out;
+}
+
+.repair-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 182, 185, 0.4);
+}
+
+
+.repair-form-group {
+  position: relative;
+}
+
+
+
+
+.otp-input {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #b56576;
+  border-radius: 8px;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.otp-input:focus {
+  border-color: #ffb6b9;
+  box-shadow: 0 0 10px rgba(255, 182, 185, 0.5);
+}

@@ -1,0 +1,4 @@
+/* // At top of your component or global CSS */
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
