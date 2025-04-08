@@ -7,6 +7,7 @@ import VideoStream from "./components/VideoStream";
 import Notifications from "./components/Notifications";
 import ExchangeForm from "./components/ExchangeForm";
 import CategoryPage from "../src/pages/CategoryPage"
+import ProductDetails from "./components/ProductDetails";
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path="/notification" element={<Notifications />} />
         <Route path="/exchange" element={< ExchangeForm/>} />
         <Route path="/category/:categoryName" element={<CategoryPage />} />
+        {/* <Route path="/product/:productId" element={<ProductDetails />} /> */}
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
       <Footer />
       </>

@@ -21,7 +21,7 @@ const JewelleryRepair = () => {
     
         try {
             console.log('📤 Sending Repair Request:', repairData);
-            const response = await axios.post('http://localhost:7001/api/repair/request', repairData);
+            const response = await axios.post('https://projectnewbackend1-1.onrender.com/api/repair/request', repairData);
             console.log('✅ Repair Response:', response.data);
     
             setRepairId(response.data.repairId);

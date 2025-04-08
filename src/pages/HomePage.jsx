@@ -7,8 +7,8 @@ import JewelleryCategory from "../components/jewelleryCategory"; // ✅ Correcte
 import DiamondJewellery from "../components/DiamondJewellery";
 import GoldJewellery from "../components/GoldJewellery";
 import OurCollection from "../components/OurCollection";
-// import VideoPlayer from "../components/VideoPlayer";
 import VideoCarousel from "../components/VideoCarousel";
+import TopCollection from "../components/TopCollection";
 
 const banners = [banner1, banner2, banner3];
 
@@ -44,6 +44,7 @@ const HomePage = () => {
           ))}
         </div>
       </div>
+      <TopCollection/>
       {/* <VideoPlayer/> */}
       <VideoCarousel/>
       <DiamondJewellery/>

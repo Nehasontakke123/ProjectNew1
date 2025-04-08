@@ -16,7 +16,7 @@ const ExchangeForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:7001/api/exchange/create", form);
+    const res = await axios.post("https://projectnewbackend1-1.onrender.com/api/exchange/create", form);
     alert("OTP sent to your phone!");
     setRequestId(res.data.requestId);
   };

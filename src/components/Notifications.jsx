@@ -76,7 +76,7 @@ const Notifications = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:7001/api/notifications/sendNotification", {
+      await axios.post("https://projectnewbackend1-1.onrender.com/api/notifications/sendNotification", {
         to: email,
         subject,
         text: message,

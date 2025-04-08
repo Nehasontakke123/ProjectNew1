@@ -32,7 +32,7 @@
 .nav-logo a {
   font-size: 49px;
   font-weight: 800;
-  color: #b56576;
+  color: #8e4457;
   text-decoration: none;
 }
 
@@ -74,13 +74,13 @@
 .nav-icons {
   display: flex;
   gap: 20px;
-  color: #b56576;
+  color: #8e4457;
   font-size: 22px;
   /* font-weight: 800; */
 }
 
 .nav-icons svg:hover {
-  color: #b56576;
+  color: #8e4457;
   transform: scale(1.2);
 }
 
@@ -91,12 +91,14 @@
   gap: 20px;
   padding: 12px 0;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 16.7px;
+  
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #c08497;
+  color:#8e4457;
+  /* color:black; */
   padding: 5px 15px;
   transition: all 0.3s ease-in-out;
 }

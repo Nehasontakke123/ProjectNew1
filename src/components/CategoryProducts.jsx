@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // 👈 Import useNavigate
+import "../assets/css/CategoryProducts.css";
 
 const CategoryProducts = ({ category }) => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate(); // 👈 Initialize useNavigate
 
   useEffect(() => {
     const fetchCategoryProducts = async () => {
@@ -25,40 +28,33 @@ const CategoryProducts = ({ category }) => {
     fetchCategoryProducts();
   }, [category]);
 
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Products in {category} Category</h2>
+    <div className="category-container">
+      <h2 className="category-title">Products in {category} Category</h2>
 
       {products.length === 0 ? (
         <p>No products found in this category.</p>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
+        <div className="products-grid">
           {products.map((product) => (
             <div
               key={product._id}
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: "10px",
-                padding: "10px",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                background: "#fff",
-              }}
+              className="product-card"
+              onClick={() => handleProductClick(product._id)}
+              style={{ cursor: "pointer" }}
             >
               {product.images && product.images.length > 0 && (
-                <img
-                  src={`https://projectnewbackend1-1.onrender.com/${product.images[0]}`}
-                  alt={product.name}
-                  style={{
-                    width: "100%",
-                    height: "180px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                    marginBottom: "10px",
-                  }}
-                />
+                <div className="product-images">
+                  <img src={product.images[0]} alt="Image 1" />
+                  <img src={product.images[1] || product.images[0]} alt="Image 2" />
+                </div>
               )}
-              <h4 style={{ marginBottom: "5px" }}>{product.name}</h4>
-              <p style={{ color: "#333", fontWeight: "bold" }}>₹{product.price}</p>
+              <h4 className="product-name">{product.name}</h4>
+              <p className="product-price">₹{product.price}</p>
             </div>
           ))}
         </div>

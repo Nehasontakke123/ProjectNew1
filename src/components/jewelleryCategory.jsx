@@ -11,8 +11,8 @@ import image8 from '../assets/images/MangalasutraGold.jpg';
 import "../assets/css/JewelleryCategory.css"; 
 
 const categories = [
-  { id: 1, image: image1, name: "Diamond Ring" },
-  { id: 2, image: image2, name: "Gold Ring" },
+  { id: 1, image: image1, name: "Diamond Rings" },
+  { id: 2, image: image2, name: "Gold Rings" },
   { id: 3, image: image3, name: "Diamond Earrings" },
   { id: 4, image: image4, name: "Gold Earrings" },
   { id: 5, image: image5, name: "Diamond Necklace" },
