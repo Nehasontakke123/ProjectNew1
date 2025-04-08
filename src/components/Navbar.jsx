@@ -48,16 +48,10 @@ const Navbar = () => {
         <NavLink to="/gifting" className={({ isActive }) => (isActive ? "active" : "")}><FaGift /> Gifting</NavLink>
         <NavLink to="/more" className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> More</NavLink>
 
-        {/* ✅ Jewellery Repair - New Page Open */}
-        <NavLink
-          to="#"
-          onClick={(event) => {
-            event.preventDefault(); // Default Navigation Block
-            window.open("/jewellery-repair", "_blank", "noopener,noreferrer"); // ✅ Open in new tab
-          }}
-        >
-          <FaGem /> Jewellery Repair
-        </NavLink>
+
+<NavLink to="/jewellery-repair" className={({ isActive }) => (isActive ? "active" : "")}>
+  <FaGem /> Jewellery Repair
+</NavLink>
 
         <NavLink to="/exchange" className={({ isActive }) => (isActive ? "active" : "")}>
   <FaGem /> ExchangeForm

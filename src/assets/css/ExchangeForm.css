@@ -71,7 +71,7 @@
   }
   
   .submit-btn:hover {
-    background: linear-gradient(to right, #fff5f7, #b56576);
+    background: linear-gradient(to right, #8e4457, #b56576);
   }
   
   /* OTP section */
@@ -87,7 +87,7 @@
   }
   
   .verify-btn {
-    background-color: #b56576;
+    background-color:#8e4457;
     color: white;
     padding: 12px 18px;
     border: none;
@@ -98,7 +98,7 @@
   }
   
   .verify-btn:hover {
-    background: linear-gradient(to right, #fff5f7, #b56576);
+    background: linear-gradient(to right, #8e4457, #8e4457);
   }
   
   /* Responsive design */

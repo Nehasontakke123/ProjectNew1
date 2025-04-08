@@ -13,6 +13,7 @@ import video3 from "../assets/video/Jewellery Promotional video 1.mp4";
 import video4 from "../assets/video/Enchanting Bridal Collections.mp4";
 import video5 from "../assets/video/SARAVANA.mp4";
 import video6 from "../assets/video/The rose gold ring.mp4";
+import video7  from '../assets/video/Glint and Glow Jewellery.mp4'
 
 const videoList = [
   { title: "Rings Collection", src: video1 },
@@ -21,6 +22,7 @@ const videoList = [
   { title: "Bridal Jewellery", src: video4 },
   { title: "Royal Style", src: video5 },
   { title: "Rose Gold Beauty", src: video6 },
+  { title: "Rose Gold Beauty", src: video7 },
 ];
 
 const VideoCarousel = () => {
