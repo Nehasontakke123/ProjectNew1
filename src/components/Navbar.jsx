@@ -37,51 +37,44 @@ const Navbar = () => {
 
       {/* ✅ 2nd Row: Navigation Links */}
       <div className={`nav-links ${isOpen ? "flex" : "hidden"} flex-col absolute top-16 left-0 w-full bg-white shadow-md md:static md:flex md:flex-row md:bg-transparent md:shadow-none`}>
-        <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}><GiNecklace /> All Jewellery</NavLink>
-        <NavLink to="/gold" className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> Gold</NavLink>
-        <NavLink to="/diamond" className={({ isActive }) => (isActive ? "active" : "")}><BsDiamond /> Diamond</NavLink>
-        <NavLink to="/earrings" className={({ isActive }) => (isActive ? "active" : "")}><GiEarrings /> Earrings</NavLink>
-        <NavLink to="/rings" className={({ isActive }) => (isActive ? "active" : "")}><FaRing /> Rings</NavLink>
-        <NavLink to="/daily-wear" className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> Daily Wear</NavLink>
-        <NavLink to="/collections" className={({ isActive }) => (isActive ? "active" : "")}><BsCollection /> Collections</NavLink>
-        <NavLink to="/wedding" className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> Wedding</NavLink>
-        <NavLink to="/gifting" className={({ isActive }) => (isActive ? "active" : "")}><FaGift /> Gifting</NavLink>
-        <NavLink to="/more" className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> More</NavLink>
+        <NavLink to="/" onClick={() => setIsOpen(false)}  className={({ isActive }) => (isActive ? "active" : "")}><GiNecklace /> All Jewellery</NavLink>
+        <NavLink to="/gold" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> Gold</NavLink>
+        <NavLink to="/diamond" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><BsDiamond /> Diamond</NavLink>
+        <NavLink to="/earrings" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><GiEarrings /> Earrings</NavLink>
+        <NavLink to="/rings" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaRing /> Rings</NavLink>
+        <NavLink to="/daily-wear" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> Daily Wear</NavLink>
+        <NavLink to="/collections" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><BsCollection /> Collections</NavLink>
+        <NavLink to="/wedding" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> Wedding</NavLink>
+        <NavLink to="/gifting" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaGift /> Gifting</NavLink>
+        <NavLink to="/more" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaGem /> More</NavLink>
 
 
-<NavLink to="/jewellery-repair" className={({ isActive }) => (isActive ? "active" : "")}>
+<NavLink to="/jewellery-repair" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>
   <FaGem /> Jewellery Repair
 </NavLink>
 
-        <NavLink to="/exchange" className={({ isActive }) => (isActive ? "active" : "")}>
+        <NavLink to="/exchange" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>
   <FaGem /> ExchangeForm
 </NavLink>
 
-<NavLink to="/order" className={({ isActive }) => (isActive ? "active" : "")}>
+<NavLink to="/order" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>
   <FaGem /> Jewellery List
 </NavLink>
 
-<NavLink to="/video" className={({ isActive }) => (isActive ? "active" : "")}>
+<NavLink to="/video" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>
   <FaGem /> VideoStream
  </NavLink>
 
-
-
-
-
-
-<NavLink to="/notification" className={({ isActive }) => (isActive ? "active" : "")}>
+<NavLink to="/notification" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>
   <FaGem /> Notifications  
 </NavLink>
-{/* <NavLink to="/video-call" className={({ isActive }) => (isActive ? "active" : "")}>
-  <FaGem /> Video Call
-</NavLink> */}
       </div>
     </nav>
   );
 };
 
 export default Navbar;
+
 
 
 

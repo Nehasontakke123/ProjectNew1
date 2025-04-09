@@ -22,7 +22,7 @@ const ExchangeForm = () => {
   };
 
   const verifyOTP = async () => {
-    await axios.post("http://localhost:7001/api/exchange/verify-otp", { requestId, otp });
+    await axios.post("https://projectnewbackend1-1.onrender.com/api/exchange/verify-otp", { requestId, otp });
     alert("OTP Verified! Your transaction is now verified.");
   };
 
