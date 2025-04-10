@@ -8,28 +8,29 @@ import Notifications from "./components/Notifications";
 import ExchangeForm from "./components/ExchangeForm";
 import CategoryPage from "../src/pages/CategoryPage"
 import ProductDetails from "./components/ProductDetails";
+import DynamicCategory from "./components/DynamicCategory";
 
 
 function App() {
   return (
-<>
-
-      <Navbar />
-      {/* <Notifications/> */}
-      <Routes>
-        {/* Define Routes for Different Pages */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/jewellery-repair" element={<JewelleryRepair />} /> {/* Route for repair request page */}
-        <Route path="/video" element={<VideoStream />} />
-        <Route path="/notification" element={<Notifications />} />
-        <Route path="/exchange" element={< ExchangeForm/>} />
-        <Route path="/category/:categoryName" element={<CategoryPage />} />
-        {/* <Route path="/product/:productId" element={<ProductDetails />} /> */}
-        <Route path="/product/:id" element={<ProductDetails />} />
-      </Routes>
-      <Footer />
+  
+      <>
+        <Navbar />
+        {/* <Notifications/> */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/jewellery-repair" element={<JewelleryRepair />} />
+          <Route path="/video" element={<VideoStream />} />
+          <Route path="/notification" element={<Notifications />} />
+          <Route path="/exchange" element={<ExchangeForm />} />
+          <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/:name" element={<DynamicCategory />} />
+        
+        </Routes>
+        <Footer />
       </>
+   
   );
 }
-
 export default App;
