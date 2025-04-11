@@ -1,3 +1,4 @@
+/* ============ BASE STYLES ============ */
 .brides-section {
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
@@ -5,7 +6,6 @@
   background: #fff;
 }
 
-/* ============ Heading with underline ============ */
 .brides-heading h2 {
   font-size: 40px;
   font-weight: 800;
@@ -37,7 +37,6 @@
   margin-bottom: 30px;
 }
 
-/* ============ Banner Section with Hover Effect ============ */
 .banner {
   position: relative;
   border-radius: 12px;
@@ -61,7 +60,6 @@
   object-fit: cover;
 }
 
-/* ============ Brides List ============ */
 .brides-list {
   margin-top: -280px;
   padding: 20px 16px 0;
@@ -81,7 +79,6 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
-  /* background: #fff; */
 }
 
 .bride-card:hover {
@@ -103,31 +100,14 @@
   color: #222;
 }
 
-/* ============ View All Button ============ */
+/* Hide "View All" Button */
 .view-all-container {
-  margin-top: 30px;
+  display: none;
 }
 
-.view-all {
-  background: transparent;
-  border: 2px solid #8e4457;
-  padding: 10px 20px;
-  color: #8e4457;
-  font-weight: bold;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
+/* ============ RESPONSIVE STYLES ============ */
 
-.view-all:hover {
-  background-color: #8e4457;
-  color: white;
-}
-
-/* ============ Responsive ============ */
+/* --------- Large Tablets / Small Desktops --------- */
 @media screen and (max-width: 1024px) {
   .brides-heading h2 {
     font-size: 32px;
@@ -146,6 +126,7 @@
   }
 }
 
+/* --------- Tablets --------- */
 @media screen and (max-width: 768px) {
   .brides-heading h2 {
     font-size: 28px;
@@ -162,17 +143,30 @@
   .brides-list {
     margin-top: -140px;
     gap: 16px;
+    justify-content: center;
+    padding: 0 8px;
   }
 
   .bride-card {
-    width: 130px;
+    width: 47%;
+    max-width: 160px;
+    margin-bottom: 12px;
   }
 
   .bride-img {
-    height: 180px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .bride-name {
+    font-size: 13px;
   }
 }
 
+/* --------- Mobiles --------- */
 @media screen and (max-width: 480px) {
   .brides-heading h2 {
     font-size: 24px;
@@ -192,11 +186,7 @@
   }
 
   .bride-card {
-    width: 110px;
-  }
-
-  .bride-img {
-    height: 150px;
+    width: 48%;
   }
 
   .bride-name {
@@ -204,18 +194,18 @@
   }
 }
 
-/* ============ Ultra Small Devices ============ */
+/* --------- Ultra Small Devices --------- */
 @media screen and (max-width: 380px) {
   .bride-card {
     width: 45%;
   }
 
-  .brides-list {
-    gap: 12px;
-  }
-
   .bride-img {
     aspect-ratio: 3 / 4;
     height: auto;
+  }
+
+  .brides-list {
+    gap: 10px;
   }
 }

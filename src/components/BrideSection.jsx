@@ -52,10 +52,6 @@ const BridesSection = () => {
         ))}
       </div>
 
-      {/* View All Button */}
-      <div className="view-all-container">
-        {/* <button className="view-all">VIEW ALL</button> */}
-      </div>
     </div>
   );
 };
