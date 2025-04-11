@@ -146,37 +146,57 @@
   }
 }
 
-/* Bride Card Styling for Mobile */
 @media screen and (max-width: 768px) {
+  .brides-heading h2 {
+    font-size: 28px;
+  }
+
+  .brides-heading p {
+    font-size: 16px;
+  }
+
+  .banner-img {
+    max-height: 500px;
+  }
+
   .brides-list {
-    justify-content: center;
-    gap: 12px;
-    padding: 0 8px;
-    flex-wrap: wrap;
+    margin-top: -140px;
+    gap: 16px;
   }
 
   .bride-card {
-    width: 47%;
-    max-width: 160px;
-    margin-bottom: 12px;
+    width: 130px;
   }
 
   .bride-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .bride-name {
-    font-size: 13px;
+    height: 180px;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .brides-heading h2 {
+    font-size: 24px;
+  }
+
+  .brides-heading p {
+    font-size: 14px;
+  }
+
+  .banner-img {
+    max-height: 300px;
+  }
+
+  .brides-list {
+    margin-top: -100px;
+    gap: 12px;
+  }
+
   .bride-card {
-    width: 48%;
+    width: 110px;
+  }
+
+  .bride-img {
+    height: 150px;
   }
 
   .bride-name {
