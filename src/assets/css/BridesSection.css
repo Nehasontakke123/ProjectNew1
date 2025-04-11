@@ -64,7 +64,7 @@
 /* ============ Brides List ============ */
 .brides-list {
   margin-top: -280px;
-  padding: 20px 0 0;
+  padding: 20px 16px 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -81,6 +81,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
+  /* background: #fff; */
 }
 
 .bride-card:hover {
@@ -89,7 +90,8 @@
 
 .bride-img {
   width: 100%;
-  aspect-ratio: 3/4;
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -132,7 +134,6 @@
   }
 
   .banner-img {
-    height: auto;
     max-height: 650px;
   }
 
@@ -200,5 +201,21 @@
 
   .bride-name {
     font-size: 12px;
+  }
+}
+
+/* ============ Ultra Small Devices ============ */
+@media screen and (max-width: 380px) {
+  .bride-card {
+    width: 45%;
+  }
+
+  .brides-list {
+    gap: 12px;
+  }
+
+  .bride-img {
+    aspect-ratio: 3 / 4;
+    height: auto;
   }
 }
