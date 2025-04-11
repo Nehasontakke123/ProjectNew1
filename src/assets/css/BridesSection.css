@@ -1,0 +1,204 @@
+.brides-section {
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: #fff;
+}
+
+/* ============ Heading with underline ============ */
+.brides-heading h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #8e4457;
+  margin-bottom: 30px;
+  font-family: 'Georgia', serif;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brides-heading h2::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: #8e4457;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.brides-heading p {
+  font-size: 1.3rem;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* ============ Banner Section with Hover Effect ============ */
+.banner {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  transition: transform 0.4s ease-in-out;
+}
+
+.banner:hover {
+  transform: scale(1.02);
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 850px;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ============ Brides List ============ */
+.brides-list {
+  margin-top: -280px;
+  padding: 20px 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.bride-card {
+  width: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bride-card:hover {
+  transform: scale(1.05);
+}
+
+.bride-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.bride-name {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* ============ View All Button ============ */
+.view-all-container {
+  margin-top: 30px;
+}
+
+.view-all {
+  background: transparent;
+  border: 2px solid #8e4457;
+  padding: 10px 20px;
+  color: #8e4457;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.view-all:hover {
+  background-color: #8e4457;
+  color: white;
+}
+
+/* ============ Responsive ============ */
+@media screen and (max-width: 1024px) {
+  .brides-heading h2 {
+    font-size: 32px;
+  }
+
+  .banner-img {
+    height: auto;
+    max-height: 650px;
+  }
+
+  .brides-list {
+    margin-top: -180px;
+  }
+
+  .bride-card {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brides-heading h2 {
+    font-size: 28px;
+  }
+
+  .brides-heading p {
+    font-size: 16px;
+  }
+
+  .banner-img {
+    max-height: 500px;
+  }
+
+  .brides-list {
+    margin-top: -140px;
+    gap: 16px;
+  }
+
+  .bride-card {
+    width: 130px;
+  }
+
+  .bride-img {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brides-heading h2 {
+    font-size: 24px;
+  }
+
+  .brides-heading p {
+    font-size: 14px;
+  }
+
+  .banner-img {
+    max-height: 300px;
+  }
+
+  .brides-list {
+    margin-top: -100px;
+    gap: 12px;
+  }
+
+  .bride-card {
+    width: 110px;
+  }
+
+  .bride-img {
+    height: 150px;
+  }
+
+  .bride-name {
+    font-size: 12px;
+  }
+}

@@ -9,6 +9,7 @@ import GoldJewellery from "../components/GoldJewellery";
 import OurCollection from "../components/OurCollection";
 import VideoCarousel from "../components/VideoCarousel";
 import TopCollection from "../components/TopCollection";
+import BridesSection from "../components/BrideSection";
 
 const banners = [banner1, banner2, banner3];
 
@@ -49,7 +50,8 @@ const HomePage = () => {
       <VideoCarousel/>
       <DiamondJewellery/>
       <GoldJewellery/>
-      <OurCollection/>
+      {/* <OurCollection/> */}
+      <BridesSection/>
     </div>
   );
 };
