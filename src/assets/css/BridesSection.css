@@ -182,23 +182,11 @@
 
   .brides-list {
     margin-top: -100px;
-    display: grid;
-    grid-template-columns: 1fr; /* ✅ Single column */
-    gap: 14px;
-    padding: 0 14px;
-    justify-items: center;
+    gap: 12px;
   }
 
   .bride-card {
-    width: 100%;
-    max-width: 300px; /* Keeps consistent width */
-  }
-
-  .bride-img {
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 10px;
+    width: 48%;
   }
 
   .bride-name {
@@ -207,18 +195,17 @@
 }
 
 /* --------- Ultra Small Devices --------- */
-@media screen and (max-width: 360px) {
-  .brides-list {
-    grid-template-columns: 1fr; /* ✅ Still single column */
-    gap: 12px;
-    padding: 0 10px;
-  }
-
+@media screen and (max-width: 380px) {
   .bride-card {
-    width: 100%;
+    width: 45%;
   }
 
   .bride-img {
     aspect-ratio: 3 / 4;
+    height: auto;
+  }
+
+  .brides-list {
+    gap: 10px;
   }
 }
