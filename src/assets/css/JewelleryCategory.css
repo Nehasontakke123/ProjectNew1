@@ -150,6 +150,7 @@
 @media (max-width: 480px) {
     .jewellery-container {
         padding: 5px;
+        margin-top: 20px;
     }
     .jewellery-card {
         width: 150px;
