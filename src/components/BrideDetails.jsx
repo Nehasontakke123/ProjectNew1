@@ -26,20 +26,6 @@ import Music8 from "../assets/music/Kesariya - Brahmāstra  Ranbir Kapoor  Alia 
 
 
 
-// const BrideLyrics = ({ lyrics, isPlaying }) => {
-//     const [words, setWords] = useState([]);
-  
-//     useEffect(() => {
-//       // Split lyrics into words on every space or newline
-//       if (lyrics) {
-//         const splitWords = lyrics.split(/(\s+)/); // includes spaces for natural spacing
-//         setWords(splitWords);
-//       }
-//     }, [lyrics]);
-// }
-
-
-
 
 const brides = [
     {
@@ -47,7 +33,8 @@ const brides = [
     //   name: "Traditional Bride",
       image: MainImg1,
     //   details: "She shines like a jewel, adorned in exquisite gold and diamond jewelry, reflecting elegance and prosperity.",
-    //   videoUrl: "https://www.youtube.com/embed/YYnSEd5dBMg",
+    // videoUrl: "https://www.youtube.com/embed/nxH-x_OjGvQ",
+
       music: Music1,
       lyrics: `Pal Pal Soch Mein Aa Na Na
 

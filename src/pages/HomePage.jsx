@@ -10,6 +10,7 @@ import OurCollection from "../components/OurCollection";
 import VideoCarousel from "../components/VideoCarousel";
 import TopCollection from "../components/TopCollection";
 import BridesSection from "../components/BrideSection";
+import ShopByGender from '../components/ShopByGender'
 
 const banners = [banner1, banner2, banner3];
 
@@ -45,7 +46,8 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-      <TopCollection/>
+      {/* <TopCollection/> */}
+      <ShopByGender/>
       {/* <VideoPlayer/> */}
       <VideoCarousel/>
       <DiamondJewellery/>
