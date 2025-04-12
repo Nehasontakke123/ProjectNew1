@@ -44,7 +44,7 @@
 
 import React from "react";
 import "../assets/css/BridesOfIndia.css";
-import newBrideImg from '../assets/images/kiaaraWedding.jpg';
+import newBrideImg from '../assets/images/ranveer-deepika.jpg';
 import BridesShowcase from "./BridesShowcase";
 
 const brides = [
