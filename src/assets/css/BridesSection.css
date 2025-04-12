@@ -64,8 +64,8 @@
   margin-top: -280px;
   padding: 20px 16px 0;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   position: relative;
   z-index: 2;
@@ -79,6 +79,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
+  /* background: #fff; */
 }
 
 .bride-card:hover {
@@ -100,14 +101,12 @@
   color: #222;
 }
 
-/* Hide "View All" Button */
 .view-all-container {
   display: none;
 }
 
 /* ============ RESPONSIVE STYLES ============ */
 
-/* --------- Large Tablets / Small Desktops --------- */
 @media screen and (max-width: 1024px) {
   .brides-heading h2 {
     font-size: 32px;
@@ -126,7 +125,6 @@
   }
 }
 
-/* --------- Tablets --------- */
 @media screen and (max-width: 768px) {
   .brides-heading h2 {
     font-size: 28px;
@@ -148,17 +146,9 @@
   }
 
   .bride-card {
-    width: 47%;
+    width: calc(50% - 10px); /* 2 in a row with gap */
     max-width: 160px;
     margin-bottom: 12px;
-  }
-
-  .bride-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius: 10px;
   }
 
   .bride-name {
@@ -166,7 +156,6 @@
   }
 }
 
-/* --------- Mobiles --------- */
 @media screen and (max-width: 480px) {
   .brides-heading h2 {
     font-size: 24px;
@@ -183,10 +172,13 @@
   .brides-list {
     margin-top: -100px;
     gap: 12px;
+    padding: 0 12px;
+    justify-content: space-between;
   }
 
   .bride-card {
-    width: 48%;
+    width: calc(50% - 10px); /* Responsive 2 per row */
+    margin-bottom: 10px;
   }
 
   .bride-name {
@@ -194,18 +186,17 @@
   }
 }
 
-/* --------- Ultra Small Devices --------- */
 @media screen and (max-width: 380px) {
+  .brides-list {
+    gap: 10px;
+  }
+
   .bride-card {
-    width: 45%;
+    width: calc(50% - 8px); /* Keep 2 per row */
   }
 
   .bride-img {
     aspect-ratio: 3 / 4;
     height: auto;
-  }
-
-  .brides-list {
-    gap: 10px;
   }
 }
