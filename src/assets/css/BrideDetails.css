@@ -1,0 +1,174 @@
+
+/* Main container fix */
+.bride-content {
+    display: flex;
+    justify-content: center; /* good */
+    flex-wrap: wrap;
+    margin-top: 180px;
+    /* gap: 40px; */
+  }
+  
+  
+  /* Image Styling */
+ /* Image Styling - Centered */
+ .bride-image {
+    width: 100%;
+    max-width: 760px;
+    height: 1200px; /* Adjust as per your design */
+    object-fit: cover; /* This will crop and fill while keeping the aspect ratio */
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    border: 4px solid #8e4457;
+    box-shadow: 0 8px 25px #8e4457;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  
+  
+  .bride-image:hover {
+    transform: scale(1.06);
+    box-shadow: 0 10px 35px #8e4457;
+  }
+  
+  /* Text section */
+  .bride-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .bride-text h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #8e4457;
+    font-style: italic;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .bride-text h2::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 3px;
+    width: 60px;
+    background-color: #b80000;
+    border-radius: 2px;
+  }
+  
+  .bride-text p {
+    font-size: 1.3rem;
+    color: #555;
+    font-style: italic;
+    line-height: 1.7;
+    animation: fadeIn 2s ease;
+  }
+  
+  /* Lyrics Section with player fix */
+  .bride-lyrics {
+    width: 100%;
+    padding: 0px 50px;
+    /* margin-top: 2px; */
+    font-size: 32px;
+    text-align: center;
+    margin-top: 10px;
+    background: #fef7f8;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .bride-lyrics audio {
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 15px;
+    outline: none;
+  }
+  
+  .bride-lyrics h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4a004e;
+    margin-top: 10px;
+  }
+  
+  .bride-lyrics p {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #222;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    animation: fadeIn 2s ease;
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 1024px) {
+    .bride-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+  
+    .bride-text {
+      text-align: center;
+    }
+  
+    .bride-text h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .bride-lyrics p {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bride-text h2 {
+      font-size: 2rem;
+    }
+  
+    .bride-text p {
+      font-size: 1.1rem;
+    }
+  
+    .bride-lyrics audio {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bride-text h2 {
+      font-size: 1.6rem;
+    }
+  
+    .bride-text p {
+      font-size: 1rem;
+    }
+  
+    .bride-lyrics {
+      padding: 15px;
+    }
+  
+    .bride-lyrics p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Smooth Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

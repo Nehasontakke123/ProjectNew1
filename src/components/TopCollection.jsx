@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../assets/css/TopCollection.css";
 
 import img1 from '../assets/images/Baby Jewelry.jpg';     // Baby
-import img2 from '../assets/images/BannerImg.jpg';         // Daily
-import img3 from '../assets/images/elegant-jewellery-banner.jpg'; // Gold
-import img4 from '../assets/images/kerala.jpg';            // Bridal
-import img5 from '../assets/images/TanishqueBaneer.jpg';   // Diamond
-import img6 from '../assets/images/Website-banner.jpg';    // Gold
-import img7 from '../assets/images/wedding-rings.jpg';     // Diamond
+import img2 from '../assets/images/TopDaily.jpg';         // Daily
+import img3 from '../assets/images/Top1.jpg'; // Gold
+import img4 from '../assets/images/Top2.jpg';            // Bridal
+import img5 from '../assets/images/TopDaimond.jpg';   // Diamond
+import img6 from '../assets/images/TopBridle.jpg';    // Gold
+import img7 from '../assets/images/TopDiamond2.jpg';     // Diamond
 
 const allImages = [
   { src: img1, category: "Baby" },

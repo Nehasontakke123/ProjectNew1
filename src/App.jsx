@@ -9,6 +9,8 @@ import ExchangeForm from "./components/ExchangeForm";
 import CategoryPage from "../src/pages/CategoryPage"
 import ProductDetails from "./components/ProductDetails";
 import DynamicCategory from "./components/DynamicCategory";
+import BridesOfIndia from "./components/BridesOfIndia";
+import BrideDetails from "./components/BrideDetails";
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/:name" element={<DynamicCategory />} />
+          <Route path="/brides-of-india" element={<BridesOfIndia />} />
+          <Route path="/bride/:id" element={<BrideDetails />} />
         
         </Routes>
         <Footer />
