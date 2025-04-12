@@ -30,7 +30,7 @@ const JewelleryCategory = () => {
 
   return (
     <div className="jewellery-container">
-      <h2 className="jewellery-title">Jewellery Categories</h2>
+      {/* <h2 className="jewellery-title">Jewellery Categories</h2> */}
       <div className="jewellery-scroll">
         <div className="jewellery-track">
           {[...categories, ...categories].map((category, index) => (
