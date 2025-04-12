@@ -173,11 +173,12 @@
     margin-top: -100px;
     gap: 12px;
     padding: 0 12px;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .bride-card {
-    width: calc(50% - 10px); /* Responsive 2 per row */
+    width: 100%;  /* पूर्ण रुंदी – मोठ्या दिसण्यासाठी */
+    max-width: none;
     margin-bottom: 10px;
   }
 
@@ -189,10 +190,12 @@
 @media screen and (max-width: 380px) {
   .brides-list {
     gap: 10px;
+    padding: 0 10px;
   }
 
   .bride-card {
-    width: calc(50% - 8px); /* Keep 2 per row */
+    width: 100%;  /* पूर्ण रुंदी ठेवून कार्ड्स मोठ्या दिसतील */
+    margin-bottom: 8px;
   }
 
   .bride-img {
