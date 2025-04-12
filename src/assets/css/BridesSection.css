@@ -156,6 +156,7 @@
   }
 }
 
+/* Mobile view: Display small images in one horizontal row */
 @media screen and (max-width: 480px) {
   .brides-heading h2 {
     font-size: 24px;
@@ -170,16 +171,19 @@
   }
 
   .brides-list {
-    margin-top: -100px;
+    /* Set to one horizontal row with scrolling if needed */
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 12px;
-    padding: 0 12px;
-    justify-content: center;
+    padding: 10px 12px;
+    justify-content: flex-start;
+    margin-top: -80px; /* कमी करण्यासाठी */
   }
 
   .bride-card {
-    width: 100%;  /* पूर्ण रुंदी – मोठ्या दिसण्यासाठी */
-    max-width: none;
-    margin-bottom: 10px;
+    flex: 0 0 auto;
+    width: 100px; /* लहान कार्ड्स */
+    margin-bottom: 0;
   }
 
   .bride-name {
@@ -187,15 +191,15 @@
   }
 }
 
+/* Further adjustments for very small devices */
 @media screen and (max-width: 380px) {
   .brides-list {
     gap: 10px;
-    padding: 0 10px;
+    padding: 10px 10px;
   }
 
   .bride-card {
-    width: 100%;  /* पूर्ण रुंदी ठेवून कार्ड्स मोठ्या दिसतील */
-    margin-bottom: 8px;
+    width: 90px;
   }
 
   .bride-img {
