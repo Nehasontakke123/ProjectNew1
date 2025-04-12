@@ -399,7 +399,7 @@ Ye moh-moh ke dhaage teri ungliyon se ja uljhe
 Koyi toh-toh naa laage kis tarah girah ye sulajhe`
     },
     {
-    //   id: 7,
+      id: 7,
     //   name: "Classic Beauty",
       image: MainImg3,
     //   details: "Grace and elegance define her, as she opts for classic designs with timeless appeal.",
