@@ -65,10 +65,11 @@
 }
 
 /* Lyrics Section with player fix */
+/* Lyrics Section with player fix */
 .bride-lyrics {
   width: 100%;
-  padding: 0px 50px;
-  font-size: 32px;
+  padding: 30px 40px;
+  font-size: 1.6rem;
   text-align: center;
   margin-top: 10px;
   background: #fef7f8;
@@ -82,7 +83,8 @@
 .bride-lyrics audio {
   width: 100%;
   max-width: 360px;
-  margin-bottom: 15px;
+  margin: 10px auto 25px;
+  display: block;
   outline: none;
 }
 
@@ -103,43 +105,41 @@
   animation: fadeIn 2s ease;
 }
 
-/* Responsive Layout */
-@media (max-width: 1024px) {
-  .bride-content {
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-  }
-
-  .bride-text {
-      text-align: center;
-  }
-
-  .bride-text h2::after {
-      left: 50%;
-      transform: translateX(-50%);
+/* Responsive Lyrics section */
+@media (max-width: 768px) {
+  .bride-lyrics {
+    padding: 20px;
+    font-size: 1.2rem;
   }
 
   .bride-lyrics p {
-      text-align: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .bride-text h2 {
-      font-size: 2rem;
-  }
-
-  .bride-text p {
-      font-size: 1.1rem;
+    font-size: 1.05rem;
+    text-align: center; /* mobile screen मधे neat वाटतं */
   }
 
   .bride-lyrics audio {
-      max-width: 90%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bride-lyrics {
+    padding: 15px;
+    font-size: 1rem;
   }
 
-  .bride-image {
-      height: auto; /* Ensure the image resizes proportionally */
+  .bride-lyrics p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify; /* neat and readable on small screens */
+  }
+
+  .bride-lyrics h4 {
+    font-size: 1rem;
+  }
+
+  .bride-lyrics audio {
+    max-width: 100%;
   }
 }
 
