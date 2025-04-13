@@ -135,7 +135,7 @@
 /* Mobile View: Horizontal Layout with Scroll */
 @media screen and (max-width: 768px) {
     .jewelcat-title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .jewelcat-grid {
@@ -145,6 +145,7 @@
         overflow-x: auto; /* Horizontal scroll on mobile */
         padding-right: 0.5rem;
         scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
     }
 
     .jewelcat-grid::-webkit-scrollbar {
@@ -161,27 +162,25 @@
     }
 
     .jewelcat-image-wrapper {
-        height: 200px; /* Adjust image height for mobile */
+        height: 220px; /* Adjust image height for mobile */
     }
 
     .jewelcat-card {
         height: auto;
-        width: 200px; /* Reduce width for mobile */
-        border-radius: 0.8rem; /* Rectangular shape on mobile */
+        width: 220px; /* Set cards width for mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
     .jewelcat-image-wrapper {
-        height: 150px; /* Adjust height further for smaller devices */
+        height: 180px; /* Further adjust height for smaller devices */
     }
 
     .jewelcat-title {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .jewelcat-card {
-        width: 160px; /* Further reduce width for very small screens */
-        border-radius: 0.8rem; /* Rectangular shape on smaller devices */
+        width: 180px; /* Further reduce width for very small screens */
     }
 }
