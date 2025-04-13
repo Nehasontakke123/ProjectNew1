@@ -162,11 +162,11 @@
     }
 
     .jewelcat-image-wrapper {
-        height: auto; /* Remove fixed height for better flexibility */
+        height: 50px; /* Remove fixed height for better flexibility */
     }
 
     .jewelcat-card {
-        height: auto;
+        height: 50px;
         width: 200px; /* Adjust width for mobile devices */
     }
 }
@@ -174,7 +174,7 @@
 /* Further adjustments for smaller devices */
 @media screen and (max-width: 480px) {
     .jewelcat-image-wrapper {
-        height: auto; /* Dynamically adjust image height */
+        height:50px; /* Dynamically adjust image height */
     }
 
     .jewelcat-title {
