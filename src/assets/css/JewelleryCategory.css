@@ -142,7 +142,7 @@
         display: flex;
         flex-wrap: nowrap;
         gap: 1rem;
-        overflow-x: auto; /* Horizontal scroll on mobile */
+        /* overflow-x: auto; Horizontal scroll on mobile */
         padding-right: 0.5rem;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
