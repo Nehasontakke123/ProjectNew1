@@ -165,6 +165,25 @@
     .jewellery-track {
         animation: scroll 10s linear infinite;
     }
+
+    /* Show only one image at a time */
+    .jewellery-scroll {
+        overflow-x: auto; /* Allow scrolling */
+        display: block; /* Remove flex for mobile */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .jewellery-track {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        animation: none;  /* Disable animation for mobile */
+    }
+
+    .jewellery-track > * {
+        flex: 0 0 auto;
+    }
 }
 
 /* Small mobile view */
@@ -203,6 +222,7 @@
 
     .jewellery-track {
         gap: 10px;
-        animation: scroll 7s linear infinite;
+        animation: none; /* Disable animation for small devices */
+        overflow-x: auto;  /* Allow horizontal scrolling */
     }
 }
