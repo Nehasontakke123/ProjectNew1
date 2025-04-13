@@ -89,14 +89,14 @@
 .jewellery-card {
     flex: 0 0 auto;
     width: 160px;
+    height: 160px; /* Set height and width equal for circular shape */
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 50%; /* Circular shape */
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     position: relative;
     animation: floating 3s ease-in-out infinite;
-    height: 200px;
     margin-bottom: 10px;
 }
 
@@ -108,7 +108,7 @@
 /* Jewellery Image */
 .jewellery-image {
     width: 100%;
-    height: 120px;
+    height: 100%; /* Make image fill the circle */
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
 }
@@ -159,6 +159,7 @@
 @media (max-width: 1024px) {
     .jewellery-card {
         width: 220px;
+        height: 220px; /* Keep circular shape */
     }
     .jewellery-title {
         font-size: 26px;
@@ -174,6 +175,7 @@
     }
     .jewellery-card {
         width: 180px;
+        height: 180px; /* Keep circular shape */
     }
     .jewellery-title {
         font-size: 22px;
@@ -189,6 +191,7 @@
     }
     .jewellery-card {
         width: 150px;
+        height: 150px; /* Keep circular shape */
     }
     .jewellery-title {
         font-size: 18px;
