@@ -130,19 +130,52 @@
     }
 }
 
-/* Responsive */
+/* Responsive *//* ... [KEEP ALL EXISTING STYLES SAME ABOVE THIS LINE] ... */
+
+/* Mobile View: Vertical Layout + Scroll */
 @media screen and (max-width: 768px) {
     .jewelcat-title {
         font-size: 1.6rem;
     }
 
+    .jewelcat-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-right: 0.5rem;
+        scroll-behavior: smooth;
+    }
+
+    .jewelcat-grid::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .jewelcat-grid::-webkit-scrollbar-thumb {
+        background-color: #8e4457;
+        border-radius: 3px;
+    }
+
+    .jewelcat-grid::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
     .jewelcat-image-wrapper {
-        height: 200px;
+        height: 170px;
+    }
+
+    .jewelcat-card {
+        height: auto;
     }
 }
 
 @media screen and (max-width: 480px) {
     .jewelcat-image-wrapper {
-        height: 170px;
+        height: 150px;
+    }
+
+    .jewelcat-title {
+        font-size: 1.4rem;
     }
 }
