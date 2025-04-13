@@ -167,6 +167,7 @@
     .jewelcat-card {
         height: auto;
         width: 200px; /* Reduce width for mobile */
+        border-radius: 0.8rem; /* Rectangular shape on mobile */
     }
 }
 
@@ -181,5 +182,6 @@
 
     .jewelcat-card {
         width: 160px; /* Further reduce width for very small screens */
+        border-radius: 0.8rem; /* Rectangular shape on smaller devices */
     }
 }
