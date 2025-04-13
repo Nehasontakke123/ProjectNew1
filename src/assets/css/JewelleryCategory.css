@@ -132,7 +132,7 @@
 
 /* Responsive *//* ... [KEEP ALL EXISTING STYLES SAME ABOVE THIS LINE] ... */
 
-/* Mobile View: Vertical Layout + Scroll */
+/* Mobile View: Horizontal Layout with Scroll */
 @media screen and (max-width: 768px) {
     .jewelcat-title {
         font-size: 1.6rem;
@@ -140,16 +140,15 @@
 
     .jewelcat-grid {
         display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-        max-height: 80vh;
-        overflow-y: auto;
+        flex-direction: row;
+        gap: 1rem;
+        overflow-x: auto; /* Horizontal scroll on mobile */
         padding-right: 0.5rem;
         scroll-behavior: smooth;
     }
 
     .jewelcat-grid::-webkit-scrollbar {
-        width: 6px;
+        height: 6px;
     }
 
     .jewelcat-grid::-webkit-scrollbar-thumb {
@@ -162,11 +161,12 @@
     }
 
     .jewelcat-image-wrapper {
-        height: 170px;
+        height: 180px; /* Adjust image height for mobile */
     }
 
     .jewelcat-card {
         height: auto;
+        width: 180px; /* Reduce width for mobile */
     }
 }
 
