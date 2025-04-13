@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "../assets/css/DiamondJewellery.css";
+import React, { useState, useEffect } from "react";
+import "../assets/css/DiamondJewellery.css"; // ✅ Same CSS
+import { useNavigate, useParams } from "react-router-dom";
 import img1 from "../assets/images/1RingGold.jpg";
 import img2 from "../assets/images/2RingGod.jpg";
 import img3 from "../assets/images/1BrasletGold.jpg";
@@ -12,51 +13,61 @@ import img9 from "../assets/images/1EarringGold.jpg";
 import img10 from "../assets/images/2EarringGold.jpg";
 
 const jewelleryData = [
-  { id: 1,  images: [img1, img2] },
-  { id: 2,  images: [img3, img4] },
-  { id: 3,  images: [img5, img6] },
-  { id: 4,  images: [img7, img8] },
-  { id: 5,  images: [img9, img10] },
+  { id: 1, label: "Gold Rings", images: [img1, img2] },
+  { id: 2, label: "Bracelets", images: [img3, img4] },
+  { id: 3, label: "Gold Mangalsutra", images: [img5, img6] },
+  { id: 4, label: "Pendants", images: [img7, img8] },
+  { id: 5, label: "Gold Earrings", images: [img9, img10] },
 ];
 
 const JewelleryCard = ({ label, images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 1000); // Auto-change every 1 second
 
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Handle category click to navigate
+  const handleClick = (categoryName) => {
+    navigate(`/category/${encodeURIComponent(categoryName)}`);
   };
 
   return (
-    <div className="jewellery-card">
-      <span className="label">{label}</span>
-      <img src={images[currentIndex]} alt={label} className="jewellery-image" />
-      <div className="navigation-buttons">
-        <button className="nav-button" onClick={prevImage}>◀</button>
-        <button className="nav-button" onClick={nextImage}>▶</button>
+    <div className="jewellery-card" onClick={() => handleClick(label)}>
+      <div className="circle-image-wrapper">
+        <img src={images[currentIndex]} alt={label} className="jewellery-image" />
       </div>
+      <span className="label">{label}</span>
     </div>
   );
 };
 
 const GoldJewellery = () => {
+  const { category } = useParams(); // Get the category from the URL
+  const filteredData = jewelleryData.filter((item) =>
+    category ? item.label.toLowerCase() === category.toLowerCase() : true
+  );
+
   return (
     <div className="diamond-jewellery-container">
       <h1 className="heading">Gold Jewellery</h1>
       <p className="description">
-        Gold are one of the most precious and stunning gemstones, known for
-        their brilliance and durability. They are often used in jewellery to
-        symbolize love and commitment.
+        Gold is one of the most cherished and timeless metals, treasured for its elegance and value. Our collection showcases stunning gold pieces perfect for any occasion.
       </p>
+
       <div className="jewellery-grid">
-        {jewelleryData.map((item) => (
-          <JewelleryCard key={item.id} label={item.label} images={item.images} />
-        ))}
+        {filteredData.length === 0 ? (
+          <p>No products found in this category.</p> // Display message if no products are found
+        ) : (
+          filteredData.map((item) => (
+            <JewelleryCard key={item.id} label={item.label} images={item.images} />
+          ))
+        )}
       </div>
     </div>
   );

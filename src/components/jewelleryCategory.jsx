@@ -55,3 +55,4 @@ const JewelleryCategory = () => {
 };
 
 export default JewelleryCategory;
+
