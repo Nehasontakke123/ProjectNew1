@@ -151,92 +151,43 @@
 
 /* Mobile view */
 @media (max-width: 768px) {
-    .jewellery-container {
-        padding: 10px;
-        margin-top: 120px;
-    }
     .jewellery-card {
-        width: 170px;
-        height: 230px;
-    }
-    .jewellery-title {
-        font-size: 22px;
-    }
-    .jewellery-track {
-        animation: scroll 10s linear infinite;
+        width: 150px; /* even smaller */
+        height: 200px; /* adjust height */
     }
 
-    /* Show only one image at a time */
-    .jewellery-scroll {
-        overflow-x: auto; /* Allow scrolling */
-        display: block; /* Remove flex for mobile */
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .jewellery-track {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 10px;
-        animation: none;  /* Disable animation for mobile */
-    }
-
-    .jewellery-track > * {
-        flex: 0 0 auto;
-    }
-
-    /* Fix for cutting off images */
     .jewellery-image {
-        width: 100%;
-        height: 150px;  /* Adjusted height for better fitting */
+        height: 110px; /* lahan keli image */
         object-fit: cover;
+    }
+
+    .jewellery-title {
+        font-size: 20px;
+    }
+
+    .jewellery-name {
+        font-size: 13px;
+        height: 28px;
     }
 }
 
 /* Small mobile view */
 @media (max-width: 480px) {
-    .jewellery-container {
-        padding: 8px;
-        margin-top: 100px;
-    }
-
     .jewellery-card {
-        width: 150px;  /* Reduced width for better fitting */
-        height: 200px; /* Adjusted height */
-        margin-bottom: 8px;
+        width: 135px;  /* lahan */
+        height: 180px;
     }
 
     .jewellery-image {
-        height: 130px;  /* Adjusted for new card height */
-        object-fit: cover; /* Ensures image doesn't overflow or stretch */
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-    }
-
-    .jewellery-title {
-        font-size: 18px;
+        height: 100px;  /* neat & small */
     }
 
     .jewellery-name {
-        font-size: 12px;
-        height: 30px;
-        padding: 5px;
-        background: #f9f9f9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 11px;
+        height: 26px;
     }
 
-    .jewellery-track {
-        gap: 10px;
-        animation: none; /* Disable animation for small devices */
-        overflow-x: auto;  /* Allow horizontal scrolling */
-    }
-
-    /* Fix for cutting off images */
-    .jewellery-image {
-        width: 100%;
-        height: 120px;  /* Adjusted to fit better */
-        object-fit: cover;
+    .jewellery-title {
+        font-size: 17px;
     }
 }
