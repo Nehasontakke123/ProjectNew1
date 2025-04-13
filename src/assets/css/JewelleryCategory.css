@@ -156,42 +156,44 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .jewellery-card {
-        width: 130px; /* Adjusted width for medium screens */
-        height: 180px; /* Adjusted height */
+        width: 220px;
     }
-
-    .jewellery-image {
-        height: 100px; /* Adjusted image height for medium screens */
-    }
-
     .jewellery-title {
-        font-size: 22px; /* Slightly reduced font size for better fit */
+        font-size: 26px;
     }
+    .jewellery-track {
+        animation: scroll 12s linear infinite;
+    }
+}
 
-    .jewellery-name {
-        font-size: 12px; /* Adjusted text size */
-        height: 25px; /* Adjusted height for better text fitting */
+@media (max-width: 768px) {
+    .jewellery-container {
+        padding: 10px;
+    }
+    .jewellery-card {
+        width: 180px;
+    }
+    .jewellery-title {
+        font-size: 22px;
+    }
+    .jewellery-track {
+        animation: scroll 10s linear infinite;
     }
 }
 
 @media (max-width: 480px) {
+    .jewellery-container {
+        padding: 5px;
+    }
     .jewellery-card {
-        width: 100px; /* Adjusted width for small screens */
-        height: 150px; /* Adjusted height for small screens */
+        width: 150px;
     }
-
-    .jewellery-image {
-        height: 80px; /* Adjusted image height for small screens */
-    }
-
     .jewellery-title {
-        font-size: 18px; /* Reduced font size for small screens */
+        font-size: 18px;
     }
-
-    .jewellery-name {
-        font-size: 11px; /* Adjusted text size */
-        height: 22px; /* Adjusted height for better text fitting */
+    .jewellery-track {
+        animation: scroll 8s linear infinite;
     }
 }
