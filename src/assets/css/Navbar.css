@@ -180,3 +180,10 @@
     font-size: 22px;
   }
 }
+.loginform a{
+  color: #8e4457;
+}
+
+.loginform a.active {
+  color:#8e4457;  /* Example: yellow when active */
+}

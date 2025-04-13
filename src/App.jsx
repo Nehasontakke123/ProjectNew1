@@ -11,6 +11,11 @@ import ProductDetails from "./components/ProductDetails";
 import DynamicCategory from "./components/DynamicCategory";
 import BridesOfIndia from "./components/BridesOfIndia";
 import BrideDetails from "./components/BrideDetails";
+import LoginForm from "./components/LoginForm copy";
+// import LoginPage from "./pages/LoginPage";
+// import ProfilePage from "./pages/ProfilePage";
+
+
 
 
 function App() {
@@ -30,7 +35,9 @@ function App() {
           <Route path="/:name" element={<DynamicCategory />} />
           <Route path="/brides-of-india" element={<BridesOfIndia />} />
           <Route path="/bride/:id" element={<BrideDetails />} />
-        
+          <Route path="/login/profile" element={<LoginForm />} /> 
+          {/* { <Route path="/login" element={<LoginPage />} /> */}
+          {/* <Route path="/profile" element={<ProfilePage />} /> */}
         </Routes>
         <Footer />
       </>

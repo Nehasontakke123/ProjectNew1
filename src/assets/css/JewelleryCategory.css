@@ -1,202 +1,148 @@
-/* Jewellery Scroll */
-.jewellery-scroll {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.jewellery-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.jewellery-track {
-    display: flex;
-    gap: 15px;
-    min-width: 200%;
-    animation: scroll 15s linear infinite;
-}
-
-.jewellery-track > * {
-    flex: 0 0 auto;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.jewellery-scroll:hover .jewellery-track {
-    animation-play-state: paused;
-}
-
-/* Jewellery Section Container */
-.jewellery-container {
-    width: 100%;
-    margin: 70px auto 0;
-    padding: 20px;
+/* JewelleryCategory.css */
+.jewelcat-container {
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #fef6f9, #fdf2e9);
     text-align: center;
-    overflow: hidden;
+    margin-top: 60px;
+    cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .jewellery-container {
-        margin-top: 120px;
-        padding: 10px;
-    }
-}
-
-/* Section Title */
-.jewellery-title {
-    font-size: 28px;
+.jewelcat-title {
+    font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: #333;
+    margin-bottom: 2rem;
+    color: #8e4457;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* Jewellery Scroll */
-.jewellery-scroll {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+.jewelcat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.jewelcat-card {
     position: relative;
-    width: 100%;
-    padding-bottom: 10px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.jewellery-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.jewellery-track {
-    display: flex;
-    gap: 10px;
-    padding: 0 5px;
-    min-width: fit-content;
-}
-
-/* Jewellery Card */
-.jewellery-card {
-    flex: 0 0 auto;
-    width: 160px;
-    height: 160px; /* Set height and width equal for circular shape */
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 50%; /* Circular shape */
+    border-radius: 1.5rem;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: jewelPulse 3s infinite ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.jewelcat-card:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.jewelcat-image-wrapper {
     position: relative;
-    animation: floating 3s ease-in-out infinite;
-    margin-bottom: 10px;
-}
-
-/* Hover Effect */
-.jewellery-card:hover {
-    transform: scale(1.05);
-}
-
-/* Jewellery Image */
-.jewellery-image {
     width: 100%;
-    height: 100%; /* Make image fill the circle */
+    height: 260px;
+    overflow: hidden;
+}
+
+.jewelcat-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    border-radius: 1.5rem;
+    animation: shimmer 1.8s infinite ease-in-out;
+    background: linear-gradient(90deg, #fefefe 25%, #f0f0f0 50%, #fefefe 75%);
+    background-size: 400% 100%;
 }
 
-/* Shine Effect on Hover */
-.jewellery-card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    transform: rotate(30deg);
-    transition: transform 0.5s ease-in-out;
+.jewelcat-card:hover .jewelcat-image {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    animation: none;
 }
 
-.jewellery-card:hover::before {
-    transform: translateX(100%);
-}
-
-/* Jewellery Name */
-.jewellery-name {
-    font-size: 13px;
-    font-weight: bold;
-    padding: 6px;
-    background: #f9f9f9;
-    color: #333;
-    text-align: center;
+.jewelcat-name {
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.6rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    transition: background 0.3s ease;
 }
 
-/* Floating Animation */
-@keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
+.jewelcat-card:hover .jewelcat-name {
+    background: #8e4457;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .jewellery-card {
-        width: 220px;
-        height: 220px; /* Keep circular shape */
-    }
-    .jewellery-title {
-        font-size: 26px;
-    }
-    .jewellery-track {
-        animation: scroll 12s linear infinite;
-    }
+/* Sparkle effect */
+.jewelcat-card::before {
+    content: '';
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: rotate(45deg);
+    animation: sparkleMove 3s infinite linear;
+    opacity: 0.4;
 }
 
-@media (max-width: 768px) {
-    .jewellery-container {
-        padding: 10px;
+@keyframes sparkleMove {
+    0% {
+        transform: translate(-100%, -100%) rotate(45deg);
     }
-    .jewellery-card {
-        width: 180px;
-        height: 180px; /* Keep circular shape */
-    }
-    .jewellery-title {
-        font-size: 22px;
-    }
-    .jewellery-track {
-        animation: scroll 10s linear infinite;
+    100% {
+        transform: translate(100%, 100%) rotate(45deg);
     }
 }
 
-@media (max-width: 480px) {
-    .jewellery-container {
-        padding: 5px;
+/* Jewel Pulse Animation */
+@keyframes jewelPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 192, 203, 0.3);
     }
-    .jewellery-card {
-        width: 150px;
-        height: 150px; /* Keep circular shape */
+    50% {
+        box-shadow: 0 0 25px rgba(255, 192, 203, 0.6);
     }
-    .jewellery-title {
-        font-size: 18px;
+}
+
+/* Shimmer Loading Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -400% 0;
     }
-    .jewellery-track {
-        animation: scroll 8s linear infinite;
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .jewelcat-title {
+        font-size: 1.6rem;
+    }
+
+    .jewelcat-image-wrapper {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .jewelcat-image-wrapper {
+        height: 170px;
     }
 }
