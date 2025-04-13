@@ -130,7 +130,7 @@
     }
 }
 
-/* Responsive *//* ... [KEEP ALL EXISTING STYLES SAME ABOVE THIS LINE] ... */
+/* Responsive */
 
 /* Mobile View: Horizontal Layout with Scroll */
 @media screen and (max-width: 768px) {
@@ -161,21 +161,25 @@
     }
 
     .jewelcat-image-wrapper {
-        height: 180px; /* Adjust image height for mobile */
+        height: 200px; /* Adjust image height for mobile */
     }
 
     .jewelcat-card {
         height: auto;
-        width: 180px; /* Reduce width for mobile */
+        width: 200px; /* Reduce width for mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
     .jewelcat-image-wrapper {
-        height: 150px;
+        height: 150px; /* Adjust height further for smaller devices */
     }
 
     .jewelcat-title {
         font-size: 1.4rem;
+    }
+
+    .jewelcat-card {
+        width: 160px; /* Further reduce width for very small screens */
     }
 }
