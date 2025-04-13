@@ -36,6 +36,7 @@
 .jewellery-scroll:hover .jewellery-track {
     animation-play-state: paused;
 }
+
 /* Jewellery Section Container */
 .jewellery-container {
     width: 100%;
@@ -157,40 +158,40 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .jewellery-card {
-        width: 60px;
-        height: 120px;
+        width: 130px; /* Adjusted width for medium screens */
+        height: 180px; /* Adjusted height */
     }
 
     .jewellery-image {
-        height: 90px;
+        height: 100px; /* Adjusted image height for medium screens */
     }
 
     .jewellery-title {
-        font-size: 20px;
+        font-size: 22px; /* Slightly reduced font size for better fit */
     }
 
     .jewellery-name {
-        font-size: 11px;
-        height: 24px;
+        font-size: 12px; /* Adjusted text size */
+        height: 25px; /* Adjusted height for better text fitting */
     }
 }
 
 @media (max-width: 480px) {
     .jewellery-card {
-        width: 50px;
-        height: 100px;
+        width: 100px; /* Adjusted width for small screens */
+        height: 150px; /* Adjusted height for small screens */
     }
 
     .jewellery-image {
-        height: 80px;
+        height: 80px; /* Adjusted image height for small screens */
     }
 
     .jewellery-title {
-        font-size: 18px;
+        font-size: 18px; /* Reduced font size for small screens */
     }
 
     .jewellery-name {
-        font-size: 10px;
-        height: 22px;
+        font-size: 11px; /* Adjusted text size */
+        height: 22px; /* Adjusted height for better text fitting */
     }
 }
