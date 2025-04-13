@@ -1,41 +1,3 @@
-/* Jewellery Scroll */
-.jewellery-scroll {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.jewellery-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.jewellery-track {
-    display: flex;
-    gap: 15px;
-    min-width: 200%;
-    animation: scroll 15s linear infinite;
-}
-
-.jewellery-track > * {
-    flex: 0 0 auto;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.jewellery-scroll:hover .jewellery-track {
-    animation-play-state: paused;
-}
 /* Jewellery Section Container */
 .jewellery-container {
     width: 100%;
@@ -154,7 +116,7 @@
     100% { transform: translateY(0px); }
 }
 
-/* Responsive Design */
+/* Mobile View */
 @media (max-width: 768px) {
     .jewellery-card {
         width: 120px;
@@ -162,7 +124,8 @@
     }
 
     .jewellery-image {
-        height: 90px;
+        height: 90px; /* smaller image size */
+        object-fit: contain; /* maintain aspect ratio */
     }
 
     .jewellery-title {
@@ -175,6 +138,7 @@
     }
 }
 
+/* Small Mobile View */
 @media (max-width: 480px) {
     .jewellery-card {
         width: 100px;
@@ -182,7 +146,8 @@
     }
 
     .jewellery-image {
-        height: 80px;
+        height: 80px; /* adjust image size for smaller screens */
+        object-fit: contain; /* maintain aspect ratio */
     }
 
     .jewellery-title {
