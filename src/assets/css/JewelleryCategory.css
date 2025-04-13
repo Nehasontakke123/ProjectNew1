@@ -175,6 +175,7 @@
 }
 
 /* Small mobile view */
+/* Small mobile view */
 @media (max-width: 480px) {
     .jewellery-container {
         padding: 8px;
@@ -182,27 +183,36 @@
     }
 
     .jewellery-card {
-        width: 120px;     /* Chhoti card width */
-        height: 160px;    /* Chhoti card height */
+        width: 130px;         /* Slightly wider card for image to fit */
+        height: 180px;        /* Adjusted height */
         margin-bottom: 8px;
     }
 
     .jewellery-image {
-        height: 100px;     /* Small image height */
+        width: 100%;
+        height: 120px;        /* Adjusted for new card height */
+        object-fit: cover;    /* Ensures image doesn't overflow or stretch */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
     }
 
     .jewellery-title {
-        font-size: 18px;   /* Small title font */
+        font-size: 18px;
     }
 
     .jewellery-name {
-        font-size: 12px;   /* Small text */
-        height: 24px;
+        font-size: 12px;
+        height: 30px;
         padding: 5px;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .jewellery-track {
-        gap: 10px;                    /* Gap kami karla */
+        gap: 10px;
         animation: scroll 7s linear infinite;
     }
 }
+
