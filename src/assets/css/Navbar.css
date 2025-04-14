@@ -125,7 +125,7 @@
   color: #b56576;
 }
 
-/* ✅ Responsive Design */
+/* ✅ Responsive Design
 @media screen and (max-width: 768px) {
   .nav-top {
     flex-direction: column;
@@ -185,5 +185,65 @@
 }
 
 .loginform a.active {
-  color:#8e4457;  /* Example: yellow when active */
+  color:#8e4457;  
+} */
+
+
+
+
+
+/* ✅ Navbar Links Mobile View */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80vh; /* Scrollable area */
+    overflow-y: auto;
+    padding: 20px 0;
+    position: absolute;
+    top: 100%; /* Just below the nav */
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-top {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-icons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .nav-search {
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 1001;
+  }
+}
+
+
+.nav-links {
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+
+.nav-links {
+  transition: all 0.3s ease-in-out;
 }
