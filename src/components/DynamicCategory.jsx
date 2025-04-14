@@ -168,7 +168,7 @@ const DynamicCategory = () => {
               <p><strong>Category:</strong> {sampleDetails.category}</p>
               <p><strong>Stock:</strong> {sampleDetails.stock}</p>
               <p><strong>Rating:</strong> {sampleDetails.rating}</p>
-              <button className="details-button">View Details</button>
+              {/* <button className="details-button">View Details</button> */}
             </div>
           </div>
         </div>

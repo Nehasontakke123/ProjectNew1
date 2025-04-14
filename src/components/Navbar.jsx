@@ -155,9 +155,11 @@ const Navbar = () => {
           <NavLink to="/gifting" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaGift /> Gifting</NavLink>
           <NavLink to="/jewellery-repair" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>Jewellery Repair</NavLink>
           <NavLink to="/exchange" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>ExchangeForm</NavLink>
-          <NavLink to="/order" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>Jewellery List</NavLink>
+          {/* <NavLink to="/order" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>Jewellery List</NavLink> */}
+          <NavLink to="/catalog">Catalog</NavLink>
           <NavLink to="/video" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}>VideoStream</NavLink>
           {/* <NavLink to="/profile" onClick={() => setIsOpen(false)} className={({ isActive }) => (isActive ? "active" : "")}><FaUser/></NavLink> */}
+          {/* <NavLink to="/catalog">Catalog</NavLink> */}
         </div>
       </nav>
 
