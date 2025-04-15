@@ -1,3 +1,4 @@
+import React from 'react'; 
 import { Route, Routes } from "react-router-dom";
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
@@ -13,8 +14,8 @@ import BridesOfIndia from "./components/BridesOfIndia";
 import BrideDetails from "./components/BrideDetails";
 import LoginForm from "./components/LoginForm copy";
 import Catalog from "./components/Catalog";
-// import CatalogPage from "./pages/CatalogPage";
-// import SingleProduct from "./components/SingleProduct";
+
+// import CartPage from "./pages/CartPage";
 
 
 
@@ -44,7 +45,7 @@ function App() {
           {/* <Route path="/product/:id" element={<SingleProduct />} /> */}
           {/* <Route path="/catalog/:category" element={<CatalogPage />} /> */}
 
-
+          {/* <Route path="/cart" element={<CartPage />} /> */}
         </Routes>
         <Footer />
       </>

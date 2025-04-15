@@ -1,35 +1,38 @@
 /* Footer Styles */
 .footer {
-  background:#8e4457;
+  background: #8e4457;
   color: white;
   padding: 40px 20px;
   text-align: center;
-  margin: auto;
 }
 
 .footer-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  gap: 30px;
+  padding: 20px 10px;
 }
 
 .footer-section {
   flex: 1;
-  min-width: 250px;
-  margin: 10px 0;
+  min-width: 220px;
+  max-width: 280px;
 }
 
 .footer-title {
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .footer-text {
   font-size: 14px;
-  opacity: 0.8;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
 .footer-links {
@@ -38,90 +41,79 @@
 }
 
 .footer-links li {
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 .footer-links a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #333;
+  color: #ffe0e6;
+  text-decoration: underline;
 }
 
+/* Social Icons */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.social-icons img {
-  width: 30px;
-  transition: transform 0.3s ease;
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-icons img:hover {
-  transform: scale(1.1);
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffe0e6;
 }
 
+/* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.8;
+  padding-top: 15px;
   margin-top: 20px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 992px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .footer-section {
-    width: 80%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .footer-title {
-    font-size: 24px;
-  }
-
-  .footer-text {
-    font-size: 12px;
-  }
-
-  .social-icons {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .social-icons img {
-    width: 25px;
+    width: 90%;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 20px 10px;
+    padding: 30px 10px;
   }
 
   .footer-title {
     font-size: 18px;
   }
 
-  .footer-text {
-    font-size: 10px;
-  }
-
+  .footer-text,
+  .footer-links a,
   .footer-bottom {
-    font-size: 10px;
+    font-size: 12px;
   }
 
-  .social-icons img {
-    width: 18px;
+  .social-icons a {
+    font-size: 18px;
   }
 }

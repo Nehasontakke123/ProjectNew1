@@ -37,14 +37,14 @@
 }
 
 /* ✅ Search Bar */
-.nav-search {
+/* .nav-search {
   display: flex;
   align-items: center;
   border: 1px solid #c08497;
   border-radius: 20px;
   padding: 5px 15px;
   width: 50%;
-  font-size: 35px;
+  font-size: 30px;
   background: linear-gradient(270deg, #fff, #f9e1e1, #ffdde1);
   background-size: 200% 200%;
   animation: waveGradient 6s ease infinite;
@@ -57,7 +57,36 @@
   font-size: 21px;
   color: #b56576;
   background: transparent;
+} */
+
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c08497;
+  border-radius: 20px;
+  padding: 8px 8px; /* ✂️ padding अजून कमी केली */
+  width: 50%;
+  font-size: 21px; /* ✂️ font-size अजून कमी */
+  /* background: linear-gradient(270deg, #fff, #f9e1e1, #ffdde1); */
+  background-size: 200% 200%;
+  animation: waveGradient 6s ease infinite;
+  height: 35px; /* ✅ fixed height देली */
 }
+
+.nav-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 21px; /* ✂️ input font-size अजून कमी */
+  margin-top: 20px;
+  color: #b56576;
+  background: transparent;
+  height: 100%; /* ✅ full height input ला */
+}
+
+
+
 
 .search-icon, .mic-icon {
   margin-left: 10px;
@@ -119,7 +148,7 @@
 .nav-toggle {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   display: none;
   color: #b56576;
@@ -187,7 +216,4 @@
 .loginform a.active {
   color:#8e4457;  
 } 
-
-
-
 

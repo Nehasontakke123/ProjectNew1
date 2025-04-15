@@ -151,7 +151,7 @@ const JewelleryCategory = () => {
 
   return (
     <div className="jewelcat-container">
-      <h2 className="jewelcat-title">✨ Shop by Category ✨</h2>
+      <h2 className="jewelcat-title">...</h2>
       <div className="jewelcat-grid">
         {categories.map((category) => (
           <div

@@ -1,5 +1,13 @@
 import { io } from "socket.io-client";
 
-const socket = io("https://projectnewbackend1-1.onrender.com"); // 🔗 तुमचा Socket.io सर्व्हर URL टाका
+// const socket = io("https://projectnewbackend1-1.onrender.com"); 
 
-export default socket;
+// export default socket;
+
+
+
+const socket = io("https://projectnewbackend1-1.onrender.com", {
+    transports: ["websocket", "polling"],
+  });
+  
+  

@@ -12,7 +12,7 @@ import video2 from "../assets/video/DIAMOND.mp4";
 import video3 from "../assets/video/Jewellery Promotional video 1.mp4";
 import video4 from "../assets/video/Enchanting Bridal Collections.mp4";
 import video5 from "../assets/video/SARAVANA.mp4";
-import video6 from "../assets/video/The rose gold ring.mp4";
+// import video6 from "../assets/video/The rose gold ring.mp4";
 
 const videoList = [
   { title: "", src: video1, views: "2.1k", likes: "1.4k" },
@@ -20,7 +20,7 @@ const videoList = [
   { title: "", src: video3, views: "1.5k", likes: "890" },
   { title: "", src: video4, views: "4.2k", likes: "3.1k" },
   { title: "", src: video5, views: "2.7k", likes: "1.9k" },
-  { title: "", src: video6, views: "5.4k", likes: "4.2k" },
+  // { title: "", src: video6, views: "5.4k", likes: "4.2k" },
 ];
 
 const VideoCarousel = () => {

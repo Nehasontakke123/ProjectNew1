@@ -11,6 +11,8 @@ import VideoCarousel from "../components/VideoCarousel";
 import TopCollection from "../components/TopCollection";
 import BridesSection from "../components/BrideSection";
 import ShopByGender from '../components/ShopByGender'
+// import GoldRateComponent from "../components/GoldRateComponent";
+
 
 const banners = [banner1, banner2, banner3];
 
@@ -54,6 +56,7 @@ const HomePage = () => {
       <GoldJewellery/>
       {/* <OurCollection/> */}
       <BridesSection/>
+      {/* <GoldRateComponent/> */}
     </div>
   );
 };
