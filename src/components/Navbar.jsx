@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom"; // `useNavigate` import
 import "../assets/css/Navbar.css";
+
+// ✅ Icons
 import {
   FaSearch, FaShoppingCart, FaUser, FaGem, FaRing, FaGift,
   FaBars, FaTimes, FaSave
@@ -9,15 +11,19 @@ import { IoIosMicrophone } from "react-icons/io";
 import { BsCollection, BsDiamond } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { GiNecklace, GiEarrings } from "react-icons/gi";
+
 import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
   const { cartItems } = useCart();
+  
+  // `useNavigate` for redirect
+  const navigate = useNavigate();
 
-  const handleLoginToggle = () => {
-    setShowLogin(!showLogin);
+  // Redirect to login page when user clicks the login icon
+  const handleLoginRedirect = () => {
+    navigate("/login/profile"); // Redirect to login page
   };
 
   return (
@@ -40,29 +46,31 @@ const Navbar = () => {
             <AiOutlineHeart title="Wishlist" />
             <FaSave title="Saved Items" />
 
-            {/* 👉 Clickable user icon to toggle login form */}
+            {/* ✅ LOGIN icon */}
             <FaUser
               title="Login"
-              onClick={handleLoginToggle}
+              onClick={handleLoginRedirect} // Now redirects to /login/profile page
               className="cursor-pointer"
             />
 
-<div className="relative cart-wrapper">
-  <NavLink to="/cart" className="cart-link">
-    <FaShoppingCart className="cart-icon" title="Cart" />
-    {cartItems.length > 0 && (
-      <span className="cart-count">{cartItems.length}</span>
-    )}
-  </NavLink>
-</div>
+            {/* Cart Icon with Count */}
+            <div className="relative cart-wrapper">
+              <NavLink to="/cart" className="cart-link">
+                <FaShoppingCart className="cart-icon" title="Cart" />
+                {cartItems.length > 0 && (
+                  <span className="cart-count">{cartItems.length}</span>
+                )}
+              </NavLink>
+            </div>
 
+            {/* Mobile Nav Toggle */}
             <button className="nav-toggle md:hidden" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
         </div>
 
-        {/* Navigation Links */}
+        {/* ✅ Navigation Links */}
         <div className={`nav-links ${isOpen ? "flex" : "hidden"} flex-col absolute top-16 left-0 w-full bg-white shadow-md md:static md:flex md:flex-row md:bg-transparent md:shadow-none`}>
           <NavLink to="/" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}><GiNecklace /> All Jewellery</NavLink>
           <NavLink to="/gold" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}><FaGem /> Gold</NavLink>
@@ -79,19 +87,6 @@ const Navbar = () => {
           <NavLink to="/video" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "active" : ""}>Video Stream</NavLink>
         </div>
       </nav>
-
-      {/* ✅ Login Modal */}
-      {showLogin && (
-        <div className="login-modal">
-          <div className="login-content">
-            <button className="close-btn" onClick={() => setShowLogin(false)}>✖</button>
-            <h2>Login</h2>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button className="login-btn">Login</button>
-          </div>
-        </div>
-      )}
     </>
   );
 };

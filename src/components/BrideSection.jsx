@@ -29,7 +29,7 @@ const BridesSection = () => {
     <div className="brides-section">
       {/* Heading and Subtitle */}
       <div className="brides-heading">
-        <h2>Brides Of India</h2>
+        <h1>Brides Of India</h1>
         <p>Leading the journey of a new life in their own unique way</p>
       </div>
 

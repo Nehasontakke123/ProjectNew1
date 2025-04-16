@@ -44,7 +44,7 @@ const ShopByGender = () => {
 
   return (
     <div className="shop-gender-section">
-      <h2 className="section-title">Shop By Gender</h2>
+      <h1 className="section-title">Shop By Gender</h1>
 
       {/* Tabs */}
       <div className="tabs">

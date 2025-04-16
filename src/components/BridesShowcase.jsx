@@ -58,7 +58,7 @@ const BridesShowcase = () => {
 
   return (
     <div className="brides-showcase-container">
-      <h2 className="brides-showcase-title">Brides of India</h2>
+      <h1 className="brides-showcase-title">Brides of India</h1>
       <p className="brides-showcase-description">
         They hold traditions close to their heart but express themselves in their unique vibrant styles.
       </p>

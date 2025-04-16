@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../assets/css/LoginForm.css';
+import '../assets/css/LoginForm.css'; // Your custom styles
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -27,7 +27,6 @@ const LoginForm = () => {
     setMessage('');
     setError('');
 
-    // Check if passwords match during registration
     if (!isLogin && formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -42,22 +41,20 @@ const LoginForm = () => {
         ? { email: formData.email, password: formData.password }
         : formData;
 
-      console.log('Sending data:', sendData); // Debugging line
-
       const res = await axios.post(url, sendData);
       setMessage(res.data.message);
 
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
-        navigate("/login/profile");
+        navigate("/login/profile"); // Redirect after successful login
       }
 
       setFormData({
         firstName: '', lastName: '', email: '', mobile: '', password: '', confirmPassword: ''
       });
     } catch (err) {
-      console.log('Error:', err); // Debugging line
+      console.log('Error:', err);
       setError(err.response?.data?.error || 'Something went wrong');
     }
   };
