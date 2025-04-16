@@ -33,6 +33,15 @@ const ProductDetails = () => {
     return <p>Loading product details...</p>;
   }
 
+  const handleAddToCart = () => {
+    // Add product with selected image to the cart
+    addToCart({
+      ...product,
+      image: selectedImage, // Include the selected image
+    });
+    alert("Product added to cart!");
+  };
+
   return (
     <div className="product-details-container">
       <button className="back-button" onClick={() => navigate("/")}>
@@ -83,10 +92,7 @@ const ProductDetails = () => {
             {/* ✅ Updated Add to Cart button */}
             <button
               className="add-to-cart-btn"
-              onClick={() => {
-                addToCart(product);
-                alert("Product added to cart!");
-              }}
+              onClick={handleAddToCart}
             >
               Add to Cart
             </button>

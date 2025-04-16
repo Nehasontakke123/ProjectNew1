@@ -19,6 +19,8 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+
 /* ✅ Top Navigation Bar */
 .nav-top {
   display: flex;
@@ -217,3 +219,40 @@
   color:#8e4457;  
 } 
 
+
+
+
+
+.cart-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-link {
+  color: #8e4457;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cart-link:hover {
+  color: #6e3244; /* Darker shade on hover */
+}
+
+.cart-icon {
+  font-size: 24px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #8e4457;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 2px 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}

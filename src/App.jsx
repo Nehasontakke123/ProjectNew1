@@ -15,7 +15,7 @@ import BrideDetails from "./components/BrideDetails";
 import LoginForm from "./components/LoginForm copy";
 import Catalog from "./components/Catalog";
 
-// import CartPage from "./pages/CartPage";
+import CartPage from "./pages/CartPage";
 
 
 
@@ -45,7 +45,7 @@ function App() {
           {/* <Route path="/product/:id" element={<SingleProduct />} /> */}
           {/* <Route path="/catalog/:category" element={<CatalogPage />} /> */}
 
-          {/* <Route path="/cart" element={<CartPage />} /> */}
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
 
        

@@ -1,4 +1,3 @@
-// src/context/CartContext.js
 import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
@@ -10,8 +9,15 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
+  // ✅ Remove item from cart using index
+  const removeFromCart = (indexToRemove) => {
+    setCartItems((prevItems) =>
+      prevItems.filter((_, index) => index !== indexToRemove)
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
