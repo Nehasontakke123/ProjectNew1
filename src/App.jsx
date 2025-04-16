@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
-import JewelleryRepair from './pages/JewelleryRepair'; // import your new page for repair form
+import JewelleryRepair from './pages/JewelleryRepair'; 
 import VideoStream from "./components/VideoStream";
 import Notifications from "./components/Notifications";
 import ExchangeForm from "./components/ExchangeForm";
@@ -47,9 +47,16 @@ function App() {
 
           {/* <Route path="/cart" element={<CartPage />} /> */}
         </Routes>
+
+       
         <Footer />
       </>
    
   );
 }
 export default App;
+
+
+
+
+

@@ -14,9 +14,9 @@ import img10 from "../assets/images/Earrings2.jpg";
 
 const jewelleryData = [
   { id: 1, label: "Diamond Rings", images: [img1, img2] },
-  { id: 2, label: "Bracelets", images: [img3, img4] },
+  { id: 2, label: "Diamond Bracelets", images: [img3, img4] },
   { id: 3, label: "Diamond Mangalsutra", images: [img5, img6] },
-  { id: 4, label: "Diamond Set", images: [img7, img8] },
+  { id: 4, label: "Diamond Pendants", images: [img7, img8] },
   { id: 5, label: "Diamond Earrings", images: [img9, img10] },
 ];
 

@@ -5,7 +5,7 @@ import CategoryProducts from "../components/CategoryProducts";
 
 const Catalog = () => {
   // Use useState to set categories dynamically
-  const [categories, setCategories] = useState(["Gold Necklace","Diamond Necklace", "Diamond Rings","Gold Rings", "Diamond Earrings","Gold Earrings", "Diamond Mangalsutra","Gold Mangalsutra"]);
+  const [categories, setCategories] = useState(["Gold Necklace","Diamond Necklace", "Diamond Rings","Gold Rings", "Diamond Earrings","Gold Earrings", "Diamond Mangalsutra","Gold Mangalsutra","Gold Bracelets","Diamond Bracelets","Gold Pendants","Diamond Pendants" ]);
 
   return (
     <div className="catalog-page">

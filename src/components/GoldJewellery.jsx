@@ -14,9 +14,9 @@ import img10 from "../assets/images/2EarringGold.jpg";
 
 const jewelleryData = [
   { id: 1, label: "Gold Rings", images: [img1, img2] },
-  { id: 2, label: "Bracelets", images: [img3, img4] },
+  { id: 2, label: "Gold Bracelets", images: [img3, img4] },
   { id: 3, label: "Gold Mangalsutra", images: [img5, img6] },
-  { id: 4, label: "Pendants", images: [img7, img8] },
+  { id: 4, label: "Gold Pendants", images: [img7, img8] },
   { id: 5, label: "Gold Earrings", images: [img9, img10] },
 ];
 
