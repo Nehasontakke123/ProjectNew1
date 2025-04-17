@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import '../assets/css/VideoStream.css';
+import axios from "axios";
 
 const socket = io("https://projectnewbackend1-1.onrender.com"); // Backend server
 
@@ -8,31 +9,43 @@ const VideoStream = () => {
     const localVideoRef = useRef(null);
     const remoteVideoRef = useRef(null);
     const peerConnection = useRef(null);
+
     const [isCalling, setIsCalling] = useState(false);
     const [incomingCall, setIncomingCall] = useState(false);
     const [incomingOffer, setIncomingOffer] = useState(null);
-    const [phoneNumber, setPhoneNumber] = useState(""); // For storing phone number to send SMS
+    // const [phoneNumber, setPhoneNumber] = useState("");
+    const [videoCallLink, setVideoCallLink] = useState("");
+
+    const [phoneNumber, setPhoneNumber] = useState("+919359481880"); // or get from input
+
 
     useEffect(() => {
+        // Handle incoming offer
         socket.on("offer", async (offer) => {
             console.log("📞 Incoming call offer received");
             setIncomingOffer(offer);
-            setIncomingCall(true); // Show popup
+            setIncomingCall(true);
         });
 
+        // Handle incoming answer
         socket.on("answer", async (answer) => {
-            await peerConnection.current.setRemoteDescription(new RTCSessionDescription(answer));
-        });
-
-        socket.on("ice-candidate", async (candidate) => {
-            try {
-                await peerConnection.current.addIceCandidate(new RTCIceCandidate(candidate));
-            } catch (error) {
-                console.error("Error adding ICE candidate:", error);
+            if (peerConnection.current) {
+                await peerConnection.current.setRemoteDescription(new RTCSessionDescription(answer));
             }
         });
 
-        return () => socket.disconnect();
+        // Handle ICE candidates
+        socket.on("ice-candidate", async (candidate) => {
+            try {
+                await peerConnection.current?.addIceCandidate(new RTCIceCandidate(candidate));
+            } catch (error) {
+                console.error("❌ Error adding ICE candidate:", error);
+            }
+        });
+
+        return () => {
+            socket.disconnect(); // Cleanup the socket connection
+        };
     }, []);
 
     const createPeerConnection = () => {
@@ -41,7 +54,9 @@ const VideoStream = () => {
         });
 
         peerConnection.current.onicecandidate = (event) => {
-            if (event.candidate) socket.emit("ice-candidate", event.candidate);
+            if (event.candidate) {
+                socket.emit("ice-candidate", event.candidate);
+            }
         };
 
         peerConnection.current.ontrack = (event) => {
@@ -53,15 +68,19 @@ const VideoStream = () => {
         setIncomingCall(false);
         createPeerConnection();
 
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-        localVideoRef.current.srcObject = stream;
-        stream.getTracks().forEach((track) => peerConnection.current.addTrack(track, stream));
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            localVideoRef.current.srcObject = stream;
+            stream.getTracks().forEach((track) => peerConnection.current.addTrack(track, stream));
 
-        await peerConnection.current.setRemoteDescription(new RTCSessionDescription(incomingOffer));
-        const answer = await peerConnection.current.createAnswer();
-        await peerConnection.current.setLocalDescription(answer);
-        socket.emit("answer", answer);
-        setIsCalling(true);
+            await peerConnection.current.setRemoteDescription(new RTCSessionDescription(incomingOffer));
+            const answer = await peerConnection.current.createAnswer();
+            await peerConnection.current.setLocalDescription(answer);
+            socket.emit("answer", answer);
+            setIsCalling(true);
+        } catch (err) {
+            console.error("❌ Error accepting call:", err);
+        }
     };
 
     const rejectCall = () => {
@@ -71,38 +90,88 @@ const VideoStream = () => {
 
     const startCall = async () => {
         createPeerConnection();
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-        localVideoRef.current.srcObject = stream;
-        stream.getTracks().forEach((track) => peerConnection.current.addTrack(track, stream));
 
-        const offer = await peerConnection.current.createOffer();
-        await peerConnection.current.setLocalDescription(offer);
-        socket.emit("offer", offer);
-        setIsCalling(true);
-
-        // Send SMS with video call link
-        sendSMSWithVideoLink();
-    };
-
-    const sendSMSWithVideoLink = async () => {
         try {
-            const videoCallLink = `https://yourdomain.com/video-call/${new Date().getTime()}`;
-            // Send the link via backend API to trigger SMS
-            await fetch("https://projectnewbackend1-1.onrender.com/api/send-sms", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    phoneNumber,
-                    videoCallLink,
-                }),
-            });
-            console.log("SMS sent with video call link.");
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            localVideoRef.current.srcObject = stream;
+            stream.getTracks().forEach((track) => peerConnection.current.addTrack(track, stream));
+
+            const offer = await peerConnection.current.createOffer();
+            await peerConnection.current.setLocalDescription(offer);
+            socket.emit("offer", offer);
+            setIsCalling(true);
+
+            // Send call link
+            await sendSMSWithVideoLink();
         } catch (error) {
-            console.error("Error sending SMS:", error);
+            console.error("❌ Error starting call:", error);
         }
     };
+
+    const isValidPhoneNumber = (number) => {
+        const regex = /^\+?[1-9]\d{1,14}$/;  // Basic validation for international phone numbers
+        return regex.test(number);
+    };
+
+    // const sendSMSWithVideoLink = async () => {
+    //     try {
+    //         const videoCallLink = "https://us05web.zoom.us/j/84223349123?pwd=IKmZfbMtmJuQsSofbm78f8xi1pzJ1z.1";
+    
+    //         if (!phoneNumber || phoneNumber.trim() === "") {
+    //             console.error("❌ Phone number is empty!");
+    //             return;
+    //         }
+    
+    //         if (!isValidPhoneNumber(phoneNumber)) {
+    //             console.error("❌ Invalid phone number format!", phoneNumber);
+    //             return;
+    //         }
+    
+    //         const response = await fetch("https://projectnewbackend1-1.onrender.com/api/video/send-whatsapp", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify({
+    //                 phoneNumber: `whatsapp:${phoneNumber}`,  // ✅ corrected field name
+    //                 videoCallLink,
+    //             }),
+    //         });
+    
+    //         const result = await response.json();
+    
+    //         if (response.ok) {
+    //             console.log("✅ Zoom Link SMS/WhatsApp sent successfully:", result);
+    //         } else {
+    //             console.error("❌ Failed to send Zoom link:", result);
+    //         }
+    //     } catch (error) {
+    //         console.error("❌ Error sending Zoom link:", error.message);
+    //     }
+    // };
+    
+
+
+    // import axios from "axios";
+
+    const sendSMSWithVideoLink = async () => {
+      const phoneNumber = "9359481880"; // WITHOUT +91, backend handles it
+      const videoUrl = "https://us05web.zoom.us/j/84223349123?pwd=IKmZfbMtmJuQsSofbm78f8xi1pzJ1z.1";
+    
+      try {
+        const response = await axios.post("https://projectnewbackend1-1.onrender.com/api/video/send-whatsapp", {
+          to: phoneNumber,
+          messageBody: "🚨 Your video call is ready! Click the link below to join:",
+          videoUrl: videoUrl
+        });
+    
+        console.log("✅ WhatsApp response:", response.data);
+      } catch (error) {
+        console.error("❌ Error sending WhatsApp message:", error);
+      }
+    };
+    
+
 
     const endCall = () => {
         if (peerConnection.current) {
@@ -116,36 +185,39 @@ const VideoStream = () => {
 
     return (
         <div className="video-container">
-            {/* Local and Remote Video */}
             <video ref={localVideoRef} autoPlay playsInline className="video" />
             <video ref={remoteVideoRef} autoPlay playsInline className="video" />
 
-            {/* Phone number input for sending SMS */}
             {!isCalling && (
                 <div>
                     <label>Enter Phone Number to Send Call Link:</label>
                     <input
-                        type="text"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                        placeholder="Enter phone number"
-                    />
+  type="text"
+  value={phoneNumber}
+  onChange={(e) => setPhoneNumber(e.target.value)}
+  placeholder="Enter phone number"
+/>
+
                 </div>
             )}
 
-            {/* Buttons */}
             {!isCalling ? (
-                <button onClick={startCall}>Start Call</button>
+                <button onClick={startCall}>📞 Start Call</button>
             ) : (
-                <button onClick={endCall}>End Call</button>
+                <button onClick={endCall}>🔴 End Call</button>
             )}
 
-            {/* Incoming Call Popup */}
             {incomingCall && (
                 <div className="call-popup">
-                    <p>📞 Incoming video call request from <strong>Karagir</strong></p>
+                    <p>📞 Incoming video call</p>
                     <button onClick={acceptCall}>✅ Accept</button>
                     <button onClick={rejectCall}>❌ Reject</button>
+                </div>
+            )}
+
+            {videoCallLink && (
+                <div>
+                    <p>📞 Video Call Link: <a href={videoCallLink} target="_blank" rel="noopener noreferrer">{videoCallLink}</a></p>
                 </div>
             )}
         </div>
