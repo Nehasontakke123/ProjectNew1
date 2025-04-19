@@ -113,46 +113,6 @@ const VideoStream = () => {
         return regex.test(number);
     };
 
-    // const sendSMSWithVideoLink = async () => {
-    //     try {
-    //         const videoCallLink = "https://us05web.zoom.us/j/84223349123?pwd=IKmZfbMtmJuQsSofbm78f8xi1pzJ1z.1";
-    
-    //         if (!phoneNumber || phoneNumber.trim() === "") {
-    //             console.error("❌ Phone number is empty!");
-    //             return;
-    //         }
-    
-    //         if (!isValidPhoneNumber(phoneNumber)) {
-    //             console.error("❌ Invalid phone number format!", phoneNumber);
-    //             return;
-    //         }
-    
-    //         const response = await fetch("https://projectnewbackend1-1.onrender.com/api/video/send-whatsapp", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({
-    //                 phoneNumber: `whatsapp:${phoneNumber}`,  // ✅ corrected field name
-    //                 videoCallLink,
-    //             }),
-    //         });
-    
-    //         const result = await response.json();
-    
-    //         if (response.ok) {
-    //             console.log("✅ Zoom Link SMS/WhatsApp sent successfully:", result);
-    //         } else {
-    //             console.error("❌ Failed to send Zoom link:", result);
-    //         }
-    //     } catch (error) {
-    //         console.error("❌ Error sending Zoom link:", error.message);
-    //     }
-    // };
-    
-
-
-    // import axios from "axios";
 
     const sendSMSWithVideoLink = async () => {
       const phoneNumber = "9359481880"; // WITHOUT +91, backend handles it
@@ -171,7 +131,8 @@ const VideoStream = () => {
       }
     };
     
-
+  
+      
 
     const endCall = () => {
         if (peerConnection.current) {
@@ -225,3 +186,6 @@ const VideoStream = () => {
 };
 
 export default VideoStream;
+
+
+
