@@ -17,6 +17,8 @@ import LoginForm from "./components/LoginForm copy";
 import Catalog from "./components/Catalog";
 
 import CartPage from "./pages/CartPage";
+import UploadReel from './components/UploadReel';
+import ReelFeed from './components/ReelFeed';
 
 
 
@@ -50,7 +52,8 @@ function App() {
 
           <Route path="/cart" element={<CartPage />} />
         </Routes>
-
+        <UploadReel />
+      <ReelFeed />
        
         <Footer />
       </>
