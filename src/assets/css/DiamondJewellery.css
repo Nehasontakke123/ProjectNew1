@@ -69,12 +69,23 @@
 } */
 
 
+/* .jewellery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+} */
+
 .jewellery-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  padding: 0 20px; /* padding added to avoid overflow */
+  box-sizing: border-box;
 }
+
+
 .jewellery-card {
   background: #fff;
   padding: 25px;
@@ -158,13 +169,48 @@
 }
 
 /* Small Devices */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .jewellery-grid {
     gap: 20px;
   }
 
   .jewellery-card {
     width: 100%;
+    height: 350px;
+    padding: 20px;
+  }
+
+  .circle-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .label {
+    font-size: 1.1rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+} */
+
+
+
+
+@media (max-width: 480px) {
+  .jewellery-grid {
+    gap: 20px;
+    padding: 0 10px; /* reduce padding on small devices */
+  }
+
+  .jewellery-card {
+    width: 100%;
+    max-width: 300px; /* limit max width */
+    margin: 0 auto;   /* center the card */
     height: 350px;
     padding: 20px;
   }

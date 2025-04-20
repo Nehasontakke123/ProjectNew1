@@ -17,8 +17,9 @@ import LoginForm from "./components/LoginForm copy";
 import Catalog from "./components/Catalog";
 
 import CartPage from "./pages/CartPage";
-import UploadReel from './components/UploadReel';
-import ReelFeed from './components/ReelFeed';
+// import UploadReel from './components/UploadReel';
+// import ReelFeed from './components/ReelFeed';
+// import RecordReel from './components/RecordReel';
 
 
 
@@ -52,8 +53,11 @@ function App() {
 
           <Route path="/cart" element={<CartPage />} />
         </Routes>
-        <UploadReel />
-      <ReelFeed />
+        {/* <UploadReel /> */}
+
+        {/* <RecordReel /> */}
+
+      {/* <ReelFeed /> */}
        
         <Footer />
       </>
