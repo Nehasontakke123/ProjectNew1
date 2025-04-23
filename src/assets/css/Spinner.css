@@ -4,11 +4,16 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  min-height: 200px; /* Default min-height for larger screens */
+  min-height: 200px;
   position: relative;
 }
 
 .lds-spinner div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
   transform-origin: 40px 40px;
   animation: lds-spinner 1.2s linear infinite;
 }
@@ -43,16 +48,22 @@
   100% { opacity: 0; }
 }
 
-/* ✅ Mobile responsive adjustments */
+/* ✅ Mobile Center Fix */
 @media (max-width: 600px) {
   .lds-spinner {
-    min-height: 100vh; /* Take full mobile height */
-    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
     z-index: 999;
-    background-color: white; /* optional overlay */
+  }
+
+  .lds-spinner div {
+    top: 50%;
+    left: 50%;
+    transform-origin: 40px 40px;
   }
 
   .lds-spinner div:after {
