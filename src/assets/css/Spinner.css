@@ -1,3 +1,4 @@
+/* Spinner Container */
 .lds-spinner {
   display: flex;
   justify-content: center;
@@ -8,6 +9,7 @@
   position: relative;
 }
 
+/* Spinner Divs */
 .lds-spinner div {
   position: absolute;
   top: 50%;
@@ -43,6 +45,7 @@
 .lds-spinner div:nth-child(11) { transform: rotate(300deg); animation-delay: -0.1s; }
 .lds-spinner div:nth-child(12) { transform: rotate(330deg); animation-delay: 0s; }
 
+/* Keyframe for Spinner Animation */
 @keyframes lds-spinner {
   0% { opacity: 1; }
   100% { opacity: 0; }
@@ -52,11 +55,12 @@
 @media (max-width: 600px) {
   .lds-spinner {
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This ensures the spinner is perfectly centered */
+    width: 80px;  /* Optional: Define fixed width */
+    height: 80px; /* Optional: Define fixed height */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Light background */
     z-index: 999;
   }
 
