@@ -56,11 +56,11 @@
   .lds-spinner {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 39%;
     transform: translate(-50%, -50%); /* This ensures the spinner is perfectly centered */
     width: 80px;  /* Optional: Define fixed width */
     height: 80px; /* Optional: Define fixed height */
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: Light background */
+    /* background-color: rgba(255, 255, 255, 0.8);  */
     z-index: 999;
   }
 
