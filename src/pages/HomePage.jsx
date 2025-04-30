@@ -12,8 +12,8 @@ import TopCollection from "../components/TopCollection";
 import BridesSection from "../components/BrideSection";
 import ShopByGender from '../components/ShopByGender'
 // import GoldRateComponent from "../components/GoldRateComponent";
-import Payment from "../components/Payment";
 
+import Payment from '../components/Payment'
 
 const banners = [banner1, banner2, banner3];
 
@@ -58,7 +58,7 @@ const HomePage = () => {
       {/* <OurCollection/> */}
       <BridesSection/>
       {/* <GoldRateComponent/> */}
-      <Payment/>
+    <Payment/>
     </div>
   );
 };
