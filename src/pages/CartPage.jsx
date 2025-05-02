@@ -38,7 +38,7 @@ const CartPage = () => {
         )}
         <div className="cart-actions">
           <Link to="/checkout">
-            {/* <button className="checkout-btn">Proceed to Checkout</button> */}
+           
           </Link>
         </div>
       </div>
