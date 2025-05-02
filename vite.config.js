@@ -22,6 +22,34 @@ export default defineConfig({
 
 
 
+// import { defineConfig } from 'vite';
+
+// // https://vite.dev/config/
+// export default defineConfig({
+//   plugins: [], // If you're using React, add: plugins: [react()]
+//   server: {
+//     host: true,
+//     port: 5173,
+//     strictPort: true,
+//     hmr: {
+//       protocol: 'ws',
+//       clientPort: 5173,
+//     },
+//   },
+//   define: {
+//     global: 'window',
+//   },
+//   build: {
+//     outDir: 'dist', // ✅ Ensures Vercel sees the correct output folder
+//   },
+// });
+
+
+
+
+
+
+
 
 
 
