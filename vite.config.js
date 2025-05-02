@@ -23,12 +23,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: './', // Ensures proper asset loading in Vercel
+  base: './', // For Vercel or static hosting
   plugins: [react()],
   build: {
-    outDir: 'dist', // Vercel looks for this by default
+    outDir: 'dist',
   },
   server: {
     host: true,
