@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom"; // `useNavigate` import
 import "../assets/css/Navbar.css";
 
-// ✅ Icons
+
 import {
   FaSearch, FaShoppingCart, FaUser, FaGem, FaRing, FaGift,
   FaBars, FaTimes, FaSave
