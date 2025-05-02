@@ -1,6 +1,5 @@
 import React from 'react'; 
 import { useParams } from "react-router-dom";
-// import BridalQuote from "./BridalQuote";
 import FloatingFlowers from "./FloatingFlowers";
 import BrideMusicPlayer from "./BrideMusicPlayer"; // 🎶 New Component
 import "../assets/css/BrideDetails.css";
