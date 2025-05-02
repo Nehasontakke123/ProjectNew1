@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: my-app  # Replace "my-app" with your desired app name
+    env: node
+    plan: free
+    buildCommand: npm install  # This installs dependencies when deploying
+    startCommand: npm run dev  # This starts the dev server (npm run dev)
+    branch: main  # Ensure this is the correct branch you're deploying
