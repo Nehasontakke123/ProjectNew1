@@ -117,7 +117,6 @@
 // export default VideoCarousel;
 
 
-
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
@@ -135,12 +134,12 @@ import video5 from "../assets/video/SARAVANA.mp4";
 // import video6 from "../assets/video/The rose gold ring.mp4";
 
 const videoList = [
-  { title: "", src: video1, views: "2.1k", likes: "1.4k" },
-  { title: "", src: video2, views: "3.8k", likes: "2.2k" },
-  { title: "", src: video3, views: "1.5k", likes: "890" },
-  { title: "", src: video4, views: "4.2k", likes: "3.1k" },
-  { title: "", src: video5, views: "2.7k", likes: "1.9k" },
-  // { title: "", src: video6, views: "5.4k", likes: "4.2k" },
+  { title: "Rings", src: video1, views: "2.1k", likes: "1.4k" },
+  { title: "Diamond", src: video2, views: "3.8k", likes: "2.2k" },
+  { title: "Jewellery Promo", src: video3, views: "1.5k", likes: "890" },
+  { title: "Bridal Collection", src: video4, views: "4.2k", likes: "3.1k" },
+  { title: "Saravana", src: video5, views: "2.7k", likes: "1.9k" },
+  // { title: "Rose Gold", src: video6, views: "5.4k", likes: "4.2k" },
 ];
 
 const VideoCarousel = () => {
@@ -149,7 +148,7 @@ const VideoCarousel = () => {
   const [showFirework, setShowFirework] = useState(false);
 
   const handleSlideClick = (index) => {
-    if (swiperRef.current && swiperRef.current.swiper) {
+    if (swiperRef.current?.swiper) {
       swiperRef.current.swiper.slideToLoop(index);
     }
   };
@@ -159,7 +158,7 @@ const VideoCarousel = () => {
     setReactions((prev) => [...prev, { id, emoji }]);
     setTimeout(() => {
       setReactions((prev) => prev.filter((r) => r.id !== id));
-    }, 2000); // remove after 2s
+    }, 2000);
   };
 
   const handleVideoEnded = () => {
@@ -167,17 +166,19 @@ const VideoCarousel = () => {
     setTimeout(() => setShowFirework(false), 3000);
   };
 
+  // Dynamic logic
   const slidesToShow = Math.min(3, videoList.length);
+  const shouldLoop = videoList.length >= slidesToShow + 1;
 
   return (
     <div className="video-carousel-wrapper">
       <Swiper
-        effect={"coverflow"}
+        effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={slidesToShow}
         slidesPerGroup={slidesToShow}
-        loop={videoList.length > slidesToShow}
+        loop={shouldLoop}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
