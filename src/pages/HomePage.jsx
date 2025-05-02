@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,Suspense, lazy } from "react";
+// import React, { Suspense, lazy } from "react"; // ✅ Clean single import
+
 import banner1 from "../assets/images/banner1.jpg";
 import banner2 from "../assets/images/banner2.jpg";
 import banner3 from "../assets/images/banner3.jpg";
@@ -7,7 +9,10 @@ import JewelleryCategory from "../components/jewelleryCategory"; // ✅ Correcte
 import DiamondJewellery from "../components/DiamondJewellery";
 import GoldJewellery from "../components/GoldJewellery";
 import OurCollection from "../components/OurCollection";
-import VideoCarousel from "../components/VideoCarousel";
+// import VideoCarousel from "../components/VideoCarousel";
+// import React, { Suspense, lazy } from "react";
+const VideoCarousel = lazy(() => import("../components/VideoCarousel"));
+
 import TopCollection from "../components/TopCollection";
 import BridesSection from "../components/BrideSection";
 import ShopByGender from '../components/ShopByGender'
@@ -52,7 +57,11 @@ const HomePage = () => {
       {/* <TopCollection/> */}
       <ShopByGender/>
       {/* <VideoPlayer/> */}
-      <VideoCarousel/>
+      {/* <VideoCarousel/> */}
+
+      <Suspense fallback={<div>Loading Videos...</div>}>
+        <VideoCarousel />
+      </Suspense>
       <DiamondJewellery/>
       <GoldJewellery/>
       {/* <OurCollection/> */}
