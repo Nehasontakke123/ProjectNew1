@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/LoginForm.css'; // Your custom styles
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Eye icons
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -11,6 +12,8 @@ const LoginForm = () => {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleTabClick = (type) => {
     setIsLogin(type === 'login');
@@ -90,11 +93,39 @@ const LoginForm = () => {
               <input type="text" name="mobile" placeholder="Mobile Number" value={formData.mobile} onChange={handleChange} required />
             </>
           )}
+
           <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
-          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+
+          <div className="password-wrapper">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <span onClick={() => setShowPassword(prev => !prev)} className="eye-icon">
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+
           {!isLogin && (
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
+            <div className="password-wrapper">
+              <input
+                type={showConfirmPassword ? 'text' : 'password'}
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+              <span onClick={() => setShowConfirmPassword(prev => !prev)} className="eye-icon">
+                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
           )}
+
           <button type="submit" className="submit-btn">
             {isLogin ? 'LOGIN' : 'REGISTER'}
           </button>

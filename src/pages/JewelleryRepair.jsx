@@ -20,9 +20,9 @@ const JewelleryRepair = () => {
             setRepairId(response.data.repairId);
             setOtpSent(true);
             alert('Repair request created. OTP sent to your phone.');
-            // Reset form values after submission
+            // Reset form values except phoneNumber (needed for OTP verification)
             setCustomerName('');
-            setPhoneNumber('');
+            // setPhoneNumber(''); ← Removed this line
             setJewelleryType('');
             setIssueDescription('');
         } catch (error) {
@@ -42,10 +42,9 @@ const JewelleryRepair = () => {
         try {
             const response = await axios.post('https://projectnewbackend1-1.onrender.com/api/repair/verify-otp', otpData);
             alert('OTP Verified successfully!');
-            // Reset the OTP state and show the form again
+            // Reset everything after successful verification
             setOtpSent(false);
             setOtp('');
-            // Optionally reset the form here if required after successful verification
             setCustomerName('');
             setPhoneNumber('');
             setJewelleryType('');
@@ -136,6 +135,6 @@ const JewelleryRepair = () => {
             </div>
         </div>
     );
-}
+};
 
 export default JewelleryRepair;

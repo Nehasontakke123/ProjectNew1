@@ -42,6 +42,49 @@ const ProductDetails = () => {
     alert("Product added to cart!");
   };
 
+  const handleBuyNow = async () => {
+    try {
+      // Step 1: Create Order
+      const { data: order } = await axios.post(
+        "https://projectnewbackend1-1.onrender.com/api/payment/create-order",
+        {
+          amount: product.price, // Use the product's price
+        }
+      );
+
+      // Step 2: Configure Razorpay options
+      const options = {
+        key: "rzp_test_HcrOflmaNTnjgB", // Same as your .env
+        amount: order.amount,
+        currency: "INR",
+        name: "Jewellery Store",
+        description: `Purchase of ${product.name}`,
+        order_id: order.id,
+        handler: function (response) {
+          alert("Payment successful! 🥳");
+          console.log(response);
+          // Optionally, navigate to a confirmation page or order history
+          navigate("/order-success");
+        },
+        prefill: {
+          name: "Neha Sontakke", // Pre-fill customer details
+          email: "nehasontakke1880@gmail.com",
+          contact: "9359481880",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      // Step 3: Open Razorpay Payment Gateway
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error) {
+      console.error("Error processing payment:", error);
+      alert("Payment failed. Please try again.");
+    }
+  };
+
   return (
     <div className="product-details-container">
       <button className="back-button" onClick={() => navigate("/")}>
@@ -87,7 +130,13 @@ const ProductDetails = () => {
           </ul>
 
           <div className="product-actions">
-            <button className="buy-now-btn">Buy Now</button>
+            {/* ✅ Updated Buy Now button with Razorpay integration */}
+            <button
+              className="buy-now-btn"
+              onClick={handleBuyNow}
+            >
+              Buy Now
+            </button>
 
             {/* ✅ Updated Add to Cart button */}
             <button
