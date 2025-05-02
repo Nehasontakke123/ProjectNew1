@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import banner1 from "../assets/images/jewellery_banner.jpg";
-import banner2 from "../assets/images/Banner3jpg";
+import banner2 from "../assets/images/Banner3.jpg";
 import banner3 from "../assets/images/RingBanner.jpg";
 import "../assets/css/HomePage.css";
 import JewelleryCategory from "../components/jewelleryCategory"; // ✅ Corrected Import Path
