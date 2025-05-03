@@ -1,17 +1,26 @@
+// {
+//   "builds": [
+//     {
+//       "src": "package.json",
+//       "use": "@vercel/node",
+//       "config": {
+//         "maxLambdaSize": "50mb"
+//       }
+//     }
+//   ],
+//   "rewrites": [
+//     { 
+//       "source": "/(.*)", 
+//       "destination": "/index.html" 
+//     }
+//   ]
+// }
+
+
+
+
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
-    }
-  ],
   "rewrites": [
-    { 
-      "source": "/(.*)", 
-      "destination": "/index.html" 
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
