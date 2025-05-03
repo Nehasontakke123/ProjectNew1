@@ -91,8 +91,8 @@
   padding: 25px;
   margin-left: 55px;
   border-radius: 30px;
-  width: 260px;
-  height: 330px; /* Height increased */
+  width: 300px;
+  height: 360px; 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
